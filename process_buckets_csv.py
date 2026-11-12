@@ -639,7 +639,7 @@ def run_buckets_inference(
     # Панель А: Траектории P_bio(t) для 4 репрезентативных сосудов S2_loam (G0, G1, G2, G3) + точки lab_toxin_ref_ec50
     rep_indices = [1, 7, 16, 25]  # S2_loam: Sample_02 (G0), Sample_08 (G1), Sample_17 (G2), Sample_26 (G3)
     rep_colors = ["#2A9D8F", "#1D63B8", "#E76F51", "#D1495B"]
-    rep_tags = ["G0 (контроль)", "G1 (бедная чистая)", "G2 (умерен. доза)", "G3 (высокая доза)"]
+    rep_tags = ["G0 (Control)", "G1 (Poor Clean)", "G2 (Mod. Dose)", "G3 (High Load)"]
 
     for s_i, col, tag in zip(rep_indices, rep_colors, rep_tags):
         sid = batch["sample_ids"][s_i]
@@ -650,19 +650,19 @@ def run_buckets_inference(
         if not math.isnan(lab_v):
             axes[0].scatter([0.0], [lab_v], color=col, edgecolors="black", s=55, zorder=6, marker="D")
 
-    axes[0].scatter([], [], color="#555555", edgecolors="black", s=50, marker="D", label="Лаб. референс lab_toxin_ref_ec50 ($t=0$)")
-    axes[0].axvspan(0, 28, color="#E8F5E9", alpha=0.30, label="Замеры в сосудах (0..28 сут)")
-    axes[0].axvspan(28, 60, color="#FFF3E0", alpha=0.35, label="Слепой прогноз (28..60 сут)")
+    axes[0].scatter([], [], color="#555555", edgecolors="black", s=50, marker="D", label="Lab Ref. lab_toxin_ref_ec50 ($t=0$)")
+    axes[0].axvspan(0, 28, color="#E8F5E9", alpha=0.30, label="Synthetic Obs. (0-28 d)")
+    axes[0].axvspan(28, 60, color="#FFF3E0", alpha=0.35, label="Blind Forecast (28-60 d)")
     axes[0].axvline(28.0, color="#37474F", ls="--", lw=1.3)
     axes[0].set_xlim(-1.5, 60)
     axes[0].set_xlabel(
-        "Время микрокосмного опыта $t$, сутки\nКаталаза O2 (прокси-индикатор ферментативной активности E)",
+        "Microcosm Time $t$, days\nCatalase O2 (proxy indicator of enzyme activity E)",
         fontsize=8.3,
     )
-    axes[0].set_ylabel("Скрытая нагрузка $\\tilde{P}_{\\mathrm{bio}}(t)$ (ед. $\\mathrm{EC}_{50}$)", fontsize=9.2)
+    axes[0].set_ylabel("Hidden Load $\\tilde{P}_{\\mathrm{bio}}(t)$ ($\\mathrm{EC}_{50}$ units)", fontsize=9.2)
     axes[0].set_title(
-        "А. Реконструкция $\\tilde{P}_{\\mathrm{bio}}(t)$ и сверка с лаб. контролем\n"
-        "lab_toxin_ref_ec50 (0..28 сут $\\rightarrow$ прогноз 60 сут)",
+        "A. $\\tilde{P}_{\\mathrm{bio}}(t)$ Reconstruction & Lab Ref. Check\n"
+        "lab_toxin_ref_ec50 (0-28 d -> 60 d forecast)",
         fontsize=9.3,
         fontweight="bold",
     )
@@ -672,23 +672,23 @@ def run_buckets_inference(
     # Панель Б: Траектории ИБСП_alpha(t) и пороги слепого диагноза без утечки is_control_G0
     for s_i, col, tag in zip(rep_indices, rep_colors, rep_tags):
         sid = batch["sample_ids"][s_i]
-        lbl = f"{sid} ({tag}): ИБСП(0)={IBSP_pred[s_i, 0]:.1f}% $\\rightarrow$ 60д: {IBSP_pred[s_i, -1]:.1f}%"
+        lbl = f"{sid} ({tag}): IBSP(0)={IBSP_pred[s_i, 0]:.1f}% $\\rightarrow$ 60d: {IBSP_pred[s_i, -1]:.1f}%"
         axes[1].plot(t_arr, IBSP_pred[s_i], color=col, lw=2.2, label=lbl)
 
-    axes[1].axhline(85.0, color="#2E7D32", ls=":", lw=1.5, label="Порог нормы ИБСП(0) = 85%")
+    axes[1].axhline(85.0, color="#2E7D32", ls=":", lw=1.5, label="Healthy Threshold IBSP(0) = 85%")
     axes[1].axvspan(0, 28, color="#E8F5E9", alpha=0.30)
     axes[1].axvspan(28, 60, color="#FFF3E0", alpha=0.35)
     axes[1].axvline(28.0, color="#37474F", ls="--", lw=1.3)
     axes[1].set_xlim(0, 60)
     axes[1].set_ylim(25, 104)
     axes[1].set_xlabel(
-        "Время микрокосмного опыта $t$, сутки\nБазальное дыхание CO2 (прокси-индикатор микробной биомассы M)",
+        "Microcosm Time $t$, days\nBasal Respiration CO2 (proxy indicator of biomass M)",
         fontsize=8.3,
     )
-    axes[1].set_ylabel("Индекс здоровья почвы ИБСП$_\\alpha(t)$, %", fontsize=9.2)
+    axes[1].set_ylabel("Soil Health Index IBSP$_\\alpha(t)$, %", fontsize=9.2)
     axes[1].set_title(
-        "Б. Траектории здоровья почвы ИБСП$_\\alpha(t)$\n"
-        "(слепой диагноз строго по выходу модели без is_control_G0)",
+        "B. Soil Health Index IBSP$_\\alpha(t)$ Trajectories\n"
+        "(blind model diagnosis without is_control_G0)",
         fontsize=9.3,
         fontweight="bold",
     )
@@ -703,9 +703,9 @@ def run_buckets_inference(
         "ТОКСИЧЕСКОЕ УГНЕТЕНИЕ (требуется биоремедиация)": "#D1495B",
     }
     diag_short = {
-        "НОРМА (здоровая почва)": "НОРМА (G0: 6/6, ИБСП>92%)",
-        "БЕДНАЯ / ИСТОЩЁННАЯ ПОЧВА (дефицит субстрата без токсикоза)": "БЕДНАЯ / ИСТОЩЁННАЯ (G1: 8/8)",
-        "ТОКСИЧЕСКОЕ УГНЕТЕНИЕ (требуется биоремедиация)": "ТОКСИЧЕСКОЕ УГНЕТЕНИЕ (G2+G3: 22/22)",
+        "НОРМА (здоровая почва)": "HEALTHY (G0: 6/6, IBSP>92%)",
+        "БЕДНАЯ / ИСТОЩЁННАЯ ПОЧВА (дефицит субстрата без токсикоза)": "POOR / DEPLETED (G1: 8/8)",
+        "ТОКСИЧЕСКОЕ УГНЕТЕНИЕ (требуется биоремедиация)": "INHIBITED (G2+G3: 22/22)",
     }
 
     plotted_labels = set()
@@ -723,13 +723,13 @@ def run_buckets_inference(
             plotted_labels.add(leg_lbl)
         axes[2].scatter([d_m], [ib0], color=col, marker=mk, s=62, alpha=0.88, edgecolors="black", linewidths=0.6, label=leg_lbl)
 
-    axes[2].axvline(d_star, color="#B71C1C", ls="--", lw=1.6, label=f"Порог детектора $d_{{\\min}}^* = {d_star:.2f}$")
-    axes[2].axhline(85.0, color="#2E7D32", ls=":", lw=1.5, label="Граница нормы ИБСП(0) = 85%")
-    axes[2].set_xlabel("Метрика техногенной аномалии Атласа $d_{\\min}$ (безразм.)", fontsize=8.8)
-    axes[2].set_ylabel("Начальный индекс здоровья ИБСП$_\\alpha(0)$, %", fontsize=9.2)
+    axes[2].axvline(d_star, color="#B71C1C", ls="--", lw=1.6, label=f"Detector Threshold $d_{{\\min}}^* = {d_star:.2f}$")
+    axes[2].axhline(85.0, color="#2E7D32", ls=":", lw=1.5, label="Healthy Boundary IBSP(0) = 85%")
+    axes[2].set_xlabel("Soil Atlas Anomaly Distance $d_{\\min}$ (dim.)", fontsize=8.8)
+    axes[2].set_ylabel("Initial Health Index IBSP$_\\alpha(0)$, %", fontsize=9.2)
     axes[2].set_title(
-        "В. Классификация 36 сосудов (G0 / G1 / G2+G3)\n"
-        "при по-серийной нормировке soil_series",
+        "C. Classification of 36 Synthetic Vessels (G0 / G1 / G2+G3)\n"
+        "under per-series soil_series normalization",
         fontsize=9.3,
         fontweight="bold",
     )
@@ -739,10 +739,10 @@ def run_buckets_inference(
 
     if audit_info is not None:
         box_txt = (
-            f"Аудит по-серийной нормировки (36 сосудов):\n"
-            f"• G0 (6 шт.): max $\\hat{{P}}(0)={audit_info['g0_max_p0']:.3f}<0.5$, min ИБСП(0)={audit_info['g0_min_ibsp0']:.1f}% [{audit_info['status_g0']}]\n"
-            f"• G1 (8 шт.): max $\\hat{{P}}(0)={audit_info['g1_max_p0']:.3f}<1.0$, max $d_{{\\min}}={audit_info['g1_max_d']:.2f}\\leq d^*$ [{audit_info['status_g1']}]\n"
-            f"• G3 (12 шт.): min $d_{{\\min}}={audit_info['g3_min_d']:.2f}>0.29$, диагноз без утечки G0 [{audit_info['status_g3']}]"
+            f"Per-Series Normalization Audit (36 Synthetic Pots):\n"
+            f"• G0 (n=6): max $\\hat{{P}}(0)={audit_info['g0_max_p0']:.3f}<0.5$, min IBSP(0)={audit_info['g0_min_ibsp0']:.1f}% [{audit_info['status_g0']}]\n"
+            f"• G1 (n=8): max $\\hat{{P}}(0)={audit_info['g1_max_p0']:.3f}<1.0$, max $d_{{\\min}}={audit_info['g1_max_d']:.2f}\\leq d^*$ [{audit_info['status_g1']}]\n"
+            f"• G3 (n=12): min $d_{{\\min}}={audit_info['g3_min_d']:.2f}>0.29$, zero G0 leakage [{audit_info['status_g3']}]"
         )
         axes[2].text(
             0.03, 0.03, box_txt,
@@ -753,7 +753,7 @@ def run_buckets_inference(
         )
 
     fig.suptitle(
-        "ТЕХНИЧЕСКИЙ DRY-RUN ПАРСЕРА CSV (синтетическая проверка конвейера до старта мокрого опыта)",
+        "SYNTHETIC DRY-RUN PIPELINE CHECK (Pre-Experiment Verification on 36 Simulated Microcosm Vessels)",
         y=1.05,
         fontsize=12.4,
         fontweight="bold",
