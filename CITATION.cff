@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use TerraKAN (Frac-ML-KAT-MoE), its Padé [3/4] Mittag-Leffler kernel, or the dynamic fractional soil health index IBSP_alpha in your research, please cite my work using the metadata below."
+type: software
+title: "TerraKAN: Fractional Kolmogorov-Arnold Transformer with Padé Mittag-Leffler Basis and Biokinetic Mixture-of-Experts for Inverse Soil Bioindication under Sparse Noisy Regimes"
+version: "1.0.0-preprint"
+date-released: "2026-11-12"
+license: "MIT"
+license-url: "https://opensource.org/licenses/MIT"
+repository-code: "https://github.com/terrakan-sciml/TerraKAN"
+authors:
+  - given-names: "Ilya"
+    family-names: "Kakhno"
+    affiliation: "Belarusian State University, Faculty of Biology"
+    orcid: "https://orcid.org/0009-0005-5503-3269"
+keywords:
+  - "Kolmogorov-Arnold Networks"
+  - "Fractional Calculus"
+  - "Mittag-Leffler Function"
+  - "Padé Approximant"
+  - "Kolmogorov-Arnold Transformer"
+  - "Soil Bioindication"
+  - "SciML"
+  - "Haldane Kinetics"
+preferred-citation:
+  type: article
+  title: "TerraKAN: Fractional Kolmogorov-Arnold Transformer with Padé Mittag-Leffler Basis and Biokinetic Mixture-of-Experts for Inverse Soil Bioindication under Sparse Noisy Regimes"
+  authors:
+    - given-names: "Ilya"
+      family-names: "Kakhno"
+      affiliation: "Belarusian State University, Faculty of Biology"
+      orcid: "https://orcid.org/0009-0005-5503-3269"
+  year: 2026
+  journal: "Zenodo / bioRxiv Preprint"
+  notes: "Belarusian State University, Faculty of Biology"
