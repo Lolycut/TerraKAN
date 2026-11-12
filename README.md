@@ -1,4 +1,5 @@
 # TerraKAN (`Frac-ML-KAT-MoE`): Fractional Kolmogorov-Arnold Transformer with Padé Mittag-Leffler Basis and Biokinetic Mixture-of-Experts for Inverse Soil Bioindication
+[![DOI](https://zenodo.org/badge/1455550676.svg)](https://doi.org/10.5281/zenodo.24167982)
 
 **Author:** Ilya Kakhno ([ORCID: 0009-0005-5503-3269](https://orcid.org/0009-0005-5503-3269), Belarusian State University, Faculty of Biology)  
 **Version:** `1.0.0-preprint` (`terrakan_v4_frozen.pt`, Seed `42`)  
