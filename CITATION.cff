@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use TerraKAN (Frac-ML-KAT-MoE), its Padé [3/4] Mittag-Leffler kernel, or the dynamic fractional soil health index IBSP_alpha in your research, please cite my work using the metadata below."
 type: software
 title: "TerraKAN: Fractional Kolmogorov-Arnold Transformer with Padé Mittag-Leffler Basis and Biokinetic Mixture-of-Experts for Inverse Soil Bioindication under Sparse Noisy Regimes"
-version: "1.0.1"
+version: 1.2.5
 date-released: "2026-11-12"
 license: "MIT"
 license-url: "https://opensource.org/licenses/MIT"

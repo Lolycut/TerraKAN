@@ -49,7 +49,7 @@
   \textbf{Ilya Kakhno}$^{1,*}$ \\
   \small $^{1}$Faculty of Biology, Belarusian State University, Minsk, Republic of Belarus \\
   \small ORCID: \href{https://orcid.org/0009-0005-5503-3269}{0009-0005-5503-3269} \quad|\quad $^{*}$E-mail: \href{mailto:Sunnywww1701@gmail.com}{Sunnywww1701@gmail.com} \\
-  \small Code \& Weights: \href{https://github.com/Lolycut/TerraKAN}{GitHub}  \quad (\texttt{v1.0.1}, \texttt{terrakan\_v4\_frozen.pt})
+  \small Code \& Weights: \href{https://github.com/Lolycut/TerraKAN}{TerraKAN (GitHub)} \quad|\quad Library: \href{https://pypi.org/project/abelkan/}{\texttt{abelkan} (PyPI)} / \href{https://github.com/Lolycut/abelkan}{GitHub}  \quad (\texttt{v1.1.0}, \texttt{terrakan\_v4\_frozen.pt})
 }
 \date{\small November 12, 2026 \quad|\quad License: CC-BY-4.0 (Preprint) \& MIT (Software)}
 
@@ -61,7 +61,7 @@
     \vspace*{-4mm}
     \begin{abstract}
       \noindent
-      In this work, I introduce \textbf{TerraKAN (\texttt{Frac-ML-KAT-MoE})}, an amortized simulation-based inference architecture that I designed, mathematically verified, and calibrated to solve the ill-posed inverse problem of soil bioindication and long-horizon self-purification forecasting from sparse ($6\text{--}8$ points), irregular (up to $50\%$ missingness), and noisy ($25\text{--}40\%$ multiplicative error) enzymatic and respiratory observations without direct chemical assays of the contaminant at test time. Whereas polynomial Kolmogorov-Arnold Networks (\texttt{ChebPIKAN}) suffer from catastrophic divergence during blind extrapolation on $t \in {[150, 365]}\text{ days}$ ($R^2 = -8.13$) and classical integer-order Bayesian ODE solvers (\texttt{MAP-ODE}) fail to reconstruct unmeasured contaminant loads ($R^2 = -0.191$) due to ignoring non-Markovian micropore memory ($\alpha < 1$), I unify four analytical primitives into an end-to-end differentiable model: (1) a causal sequence encoder (\texttt{Frac-KAT}) with an Abel-type power-law memory attention kernel and strict weight tying of the inferred memory exponent $\hat{\alpha}$; (2) a pole-free global ${[3/4]}$ Pad\'e Mittag-Leffler spectral trunk (\texttt{MittagLefflerPade34}) matching exact Maclaurin ($z \to 0$) and Poincar\'e ($z \to \infty$) asymptotics with denominator $Q_4(z) \ge 1.000978$ across $\alpha \in {[0.40, 0.90]}$; (3) a log-exponential \texttt{MultKAN} symbolic discovery node paired with a sparse Top-2 biokinetic Mixture-of-Experts (\texttt{PhysicsExpertBank}) separating Haldane substrate inhibition from Monod nutrient limitation; and (4) a dynamic memory-aware soil health index $\text{IBSP}_\alpha(t)$. Across $N=500$ held-out test scenarios on $t \in {[150, 365]}\text{ days}$, TerraKAN achieves $R^2 = 0.908 \pm 0.019$ ($\text{RMSE} = 0.181\,\text{EC}_{50}$) on the unmeasured contaminant load $\tilde{P}(t)$ and $R^2 = 0.886 \pm 0.016$ ($\text{RMSE} = 6.88\%$) on $\text{IBSP}_\alpha(t)$ at $0.50\text{ ms}$ per field---outperforming both integer-order \texttt{MAP-ODE} ($10\times$ speedup) and a classical fractional-order \texttt{MAP-FDE} solver ($R^2 = 0.802$ on $\tilde{P}(t)$, $51.98\text{ ms/field}$, $104\times$ speedup). Finally, I perform a synthetic dry-run pipeline verification of the frozen checkpoint (\texttt{terrakan\_v4\_frozen.pt}) on a simulated 36-vessel microcosm protocol prior to wet-lab execution, demonstrating $100\%$ separation of healthy controls, nutrient-poor clean soils, and contaminated regimes without control-flag leakage.
+      In this work, I introduce \textbf{TerraKAN (\texttt{Frac-ML-KAT-MoE})}, an amortized simulation-based inference architecture that I designed, mathematically verified, and calibrated to solve the ill-posed inverse problem of soil bioindication and long-horizon self-purification forecasting from sparse ($6\text{--}8$ points), irregular (up to $50\%$ missingness), and noisy ($25\text{--}40\%$ multiplicative error) enzymatic and respiratory observations without direct chemical assays of the contaminant at test time. Whereas polynomial Kolmogorov-Arnold Networks (\texttt{ChebPIKAN}) suffer from catastrophic divergence during blind extrapolation on $t \in {[150, 365]}\text{ days}$ ($R^2 = -8.13$) and classical integer-order Bayesian ODE solvers (\texttt{MAP-ODE}) fail to reconstruct unmeasured contaminant loads ($R^2 = -0.191$) due to ignoring non-Markovian micropore memory ($\alpha < 1$), I unify four analytical primitives into an end-to-end differentiable model: (1) a causal sequence encoder (\texttt{Frac-KAT}) with an Abel-type power-law memory attention kernel and strict weight tying of the inferred memory exponent $\hat{\alpha}$; (2) a pole-free global ${[3/4]}$ Pad\'e Mittag-Leffler spectral trunk (\texttt{MittagLefflerPade34}) matching exact Maclaurin ($z \to 0$) and Poincar\'e ($z \to \infty$) asymptotics with algebraically certified pole-freedom on $[0, +\infty)$ ($Q_4(z) \ge 1.0$, $\ge 1.000978$ on $z \ge 10^{-3}$ across $\alpha \in {[0.40, 0.90]}$); (3) a log-exponential \texttt{MultKAN} symbolic discovery node paired with a sparse Top-2 biokinetic Mixture-of-Experts (\texttt{PhysicsExpertBank}) separating Haldane substrate inhibition from Monod nutrient limitation; and (4) a dynamic memory-aware soil health index $\text{IBSP}_\alpha(t)$. Across $N=500$ held-out test scenarios on $t \in {[150, 365]}\text{ days}$, TerraKAN achieves $R^2 = 0.908 \pm 0.019$ ($\text{RMSE} = 0.181\,\text{EC}_{50}$) on the unmeasured contaminant load $\tilde{P}(t)$ and $R^2 = 0.886 \pm 0.016$ ($\text{RMSE} = 6.88\%$) on $\text{IBSP}_\alpha(t)$ at $0.50\text{ ms}$ per field---outperforming integer-order \texttt{MAP-ODE} ($10\times$ speedup), fractional-order \texttt{MAP-FDE} ($R^2 = 0.802$ on $\tilde{P}(t)$, $51.98\text{ ms/field}$, $104\times$ speedup), \texttt{Latent-ODE (RK4)} ($R^2 = 0.484$), and \texttt{DeepONet} ($R^2 = 0.560$), while avoiding the $-10.93$ collapse of Markovian exponential \texttt{ALiBi} under clustered $70\%$ missingness. Finally, I perform a synthetic dry-run pipeline verification of the frozen checkpoint (\texttt{terrakan\_v4\_frozen.pt}) on a simulated 36-vessel microcosm protocol prior to wet-lab execution, demonstrating $100\%$ separation of healthy controls, nutrient-poor clean soils, and contaminated regimes without control-flag leakage.
       \vspace*{2mm}
       
       \noindent\textbf{Keywords:} Kolmogorov-Arnold Networks; Fractional Calculus; Mittag-Leffler Function; Pad\'e Approximant; Amortized Simulation-Based Inference; Soil Bioindication; Haldane Kinetics.
@@ -72,20 +72,22 @@
 
 \section{Introduction \& Gap Analysis}
 
-Natural soils subjected to xenobiotic, petroleum hydrocarbon, or heavy-metal loading exhibit long-term non-Markovian memory driven by anomalous subdiffusion and sorption--desorption trapping within heterogeneous organo-mineral micropores \cite{kolesnikov2021ag,mdpienzymes2024}. Consequently, the relaxation of bioavailable contaminant load $\tilde{P}(t)$ obeys Caputo fractional differential equations of order $\alpha \in (0, 1)$ rather than memoryless exponential kinetics. In field practice, however, direct chemical quantification of $\tilde{P}(t)$ over multi-month horizons is prohibitively expensive; investigators typically collect only $3\text{--}7$ noisy measurements of microbial basal respiration $M(t)$ ($\text{CO}_2$ evolution) and extracellular enzymatic activity $E(t)$ (catalase $\text{O}_2$ displacement), interrupted by up to $50\%$ missing entries and stochastic rainfall pulses \cite{mdpi2024oxidoreductases}.
+Natural soils subjected to xenobiotic, petroleum hydrocarbon, or heavy-metal loading exhibit long-term non-Markovian memory driven by anomalous subdiffusion and sorption--desorption trapping within heterogeneous organo-mineral micropores \cite{schumer2003}. Consequently, the relaxation of bioavailable contaminant load $\tilde{P}(t)$ obeys Caputo fractional differential equations of order $\alpha \in (0, 1)$ rather than memoryless exponential kinetics. In field practice, however, direct chemical quantification of $\tilde{P}(t)$ over multi-month horizons is prohibitively expensive; investigators typically collect only $6\text{--}8$ irregular visit timestamps (yielding $3\text{--}4$ observed points per channel on average under $50\%$ independent per-channel missingness) of microbial basal respiration $M(t)$ ($\text{CO}_2$ evolution) and extracellular enzymatic activity $E(t)$ (catalase $\text{O}_2$ displacement), perturbed by $25\text{--}40\%$ multiplicative noise and stochastic rainfall pulses \cite{kolesnikov2021ag,mdpienzymes2024,mdpi2024oxidoreductases}.
 
 Positioning my approach against the 2024--2026 SciML and ecological literature reveals four critical gaps that I address in this study:
 
 \begin{enumerate}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
   \item \textbf{Extrapolation Divergence of Polynomial KANs:} Following the introduction of Kolmogorov-Arnold Networks \cite{liu2024kan} and operator networks \cite{abueidda2025deepokan}, orthogonal polynomial bases (\texttt{ChebPIKAN} / \texttt{fKAN} \cite{aghaei2024fkan}) have been widely used for physics-informed regression. While Chebyshev expansions fit observations inside $t \in [0, 150]\text{ days}$ ($R^2 = 0.918$), their unbounded polynomial growth $\propto (t/T)^k$ induces catastrophic divergence during blind extrapolation on $t \in (150, 365]\text{ days}$, collapsing to $R^2 = -8.132$ ($\text{RMSE} = 1.804\,\text{EC}_{50}$) on $\tilde{P}(t)$.
   \item \textbf{Failure of Classical Bayesian ODE/FDE Solvers:} Classical nonlinear least-squares solvers regularized toward Soil Atlas centroids (\texttt{MAP-ODE}) fit observed $M(t)$ ($R^2 = 0.900$) and $E(t)$ ($R^2 = 0.891$), but fail to reconstruct the hidden contaminant $\tilde{P}(t)$ during extrapolation ($R^2 = -0.191 \pm 0.225$, $\text{RMSE} = 0.651\,\text{EC}_{50}$) because integer-order ODEs cannot capture power-law subdiffusion ($\alpha < 1$). Even a fractional-order \texttt{MAP-FDE} solver using the Diethelm ABM integrator requires $51.98\text{ ms/field}$ of iterative per-sample optimization and achieves lower accuracy on $\tilde{P}(t)$ ($R^2 = 0.802$) under $50\%$ missingness.
-  \item \textbf{The Open Fractional Transformer--KAN Challenge:} While Yang \& Wang \cite{yang2025kat} proposed the Kolmogorov-Arnold Transformer (KAT) and Aghaei \cite{aghaei2024rkan} introduced rational Pad\'e KANs (\texttt{rKAN}), Tu et al. \cite{tu2026fractional} (July 2026, \href{https://doi.org/10.3390/fractalfract10070454}{DOI: 10.3390/fractalfract10070454}) identified the integration of rational Pad\'e bases, Mittag-Leffler eigenfunctions, and non-Markovian fractional kernels into attention architectures as an open fundamental challenge due to Gamma-function poles and autograd instability. Here, I present an analytical and differentiable realization of this architecture class.
-  \item \textbf{Ecological Ambiguity of Static IBSP Indices:} The classical static Integral Index of Biological State (IBSP / IIBS; Kazeev, Kolesnikov, \& Valkov \cite{kazeev2016bio,kolesnikov2021ag}) averages raw enzymatic percentages relative to a fixed standard. Consequently, it triggers false alarms on naturally oligotrophic sandy soils (\texttt{Arch\_5}, $K_m = 0.44$) and suffers from false negatives after moisture pulses because it neglects both Haldane hysteresis and the fractional memory penalty $(1-\alpha)\tilde{P}(t)$.
+  \item \textbf{The Open Fractional Transformer--KAN Challenge:} While Yang \& Wang \cite{yang2025kat} proposed the Kolmogorov-Arnold Transformer (KAT) and Aghaei \cite{aghaei2024rkan} introduced rational Pad\'e KANs (\texttt{rKAN}), Tu et al. \cite{tu2026fractional} (July 2026, \href{https://doi.org/10.3390/fractalfract10070454}{DOI: 10.3390/fractalfract10070454}) identified the integration of rational Pad\'e bases, Mittag-Leffler eigenfunctions, and non-Markovian fractional kernels into attention architectures as an open fundamental challenge due to Gamma-function poles and autograd instability. Here, I present an analytical and differentiable realization of this architecture class and demonstrate that heavy-tailed Abel power-law memory prevents the catastrophic collapse suffered by Markovian exponential forgetting (\texttt{ALiBi}) across multi-month observation gaps.
+  \item \textbf{Ecological Ambiguity of Static IBSP Indices:} The classical static Integral Index of Biological State (IBSP / IIBS; Kazeev, Kolesnikov, \& Valkov \cite{kazeev2003bio,kolesnikov2021ag}) averages raw enzymatic percentages relative to a fixed standard. Consequently, it triggers false alarms on naturally oligotrophic sandy soils (\texttt{Arch\_5}, $K_m = 0.44$) and suffers from false negatives after moisture pulses because it neglects both Haldane hysteresis and the fractional memory penalty $(1-\alpha)\tilde{P}(t)$.
 \end{enumerate}
 
 \takeaway{Core Contribution}{I unify causal Abel-type fractional attention, a pole-free $[3/4]$ Pad\'e Mittag-Leffler spectral trunk, a \texttt{MultKAN} power-law discovery node, and a 4-regime biokinetic Mixture-of-Experts within an amortized simulation-based inference pipeline, achieving $R^2 = 0.908$ on unmeasured contaminant extrapolation at $0.50\text{ ms/field}$.}
 
 \section{Mathematical Architecture (\texttt{Frac-ML-KAT-MoE})}
+
+The four domain-agnostic PyTorch primitives developed below (\texttt{MittagLefflerPade34}, \texttt{AbelCausalAttention}, \texttt{LogExpMultKAN}/\texttt{MittagLefflerSpectralHead}, and \texttt{TemperatureTopKMoE}) are also released as the standalone, unit-tested package \texttt{abelkan} (\texttt{pip install abelkan}; \href{https://pypi.org/project/abelkan/}{PyPI}, \href{https://github.com/Lolycut/abelkan}{GitHub}).
 
 \subsection{Dimensionless Fractional Biokinetics, Soil Atlas, \& Boundary Anchor}
 
@@ -102,19 +104,19 @@ where $D_t^\alpha f(t) = \frac{1}{\Gamma(1-\alpha)}\int_0^t (t-s)^{-\alpha}f'(s)
 
 \begin{table}[!htbp]
   \centering
-  \caption{\textbf{Reference Soil Atlas Archetypes (\texttt{Arch\_1}--\texttt{Arch\_5}).} Normalized abiotic coordinates ($\text{pH}_{\text{norm}}$, $\text{NO}_{3,\text{norm}}$, $W_{\text{norm}}$), carrying capacity $K_m$, memory order $\alpha$, and abiotic/biokinetic rates.}
+  \caption{\textbf{Reference Soil Atlas Archetypes (\texttt{Arch\_1}--\texttt{Arch\_5}).} Normalized abiotic coordinates, carrying capacity $K_m$, memory order $\alpha$, and biokinetic simulator constants ($K_i \equiv 1.0$, $\beta_E=0.09$, $\delta_E=0.075$; $\Phi_{\text{true}}$ uses $\beta_{\text{pH}}=2.50, \text{pH}_{\text{opt}}=0.65$, exponents $0.35$ and $0.40$).}
   \label{tab:soil_atlas}
   \footnotesize
   \resizebox{\linewidth}{!}{%
-  \begin{tabular}{l l c c c c c c c}
+  \begin{tabular}{l l c c c c c c c c c}
     \toprule
-    \textbf{Code} & \textbf{Soil Archetype} & \textbf{$\text{pH}_{\text{n}}$} & \textbf{$\text{NO}_{3,\text{n}}$} & \textbf{$W_{\text{n}}$} & \textbf{$K_m$} & \textbf{$\alpha$} & \textbf{$k_p$} & \textbf{$k_{\text{deg}}$} \\
+    \textbf{Code} & \textbf{Archetype} & \textbf{$\text{pH}_{\text{n}}$} & \textbf{$\text{NO}_{3,\text{n}}$} & \textbf{$W_{\text{n}}$} & \textbf{$K_m$} & \textbf{$\alpha$} & \textbf{$k_p$} & \textbf{$k_{\text{deg}}$} & \textbf{$r_m$} & \textbf{$K_s$} \\
     \midrule
-    \texttt{Arch\_1} & Sod-Podzolic Loam & $0.58$ & $0.55$ & $0.60$ & $1.00$ & $0.75$ & $0.018$ & $0.085$ \\
-    \texttt{Arch\_2} & Peat-Bog Soil & $0.36$ & $0.44$ & $0.88$ & $1.18$ & $0.55$ & $0.012$ & $0.065$ \\
-    \texttt{Arch\_3} & Sod-Carbonate Soil & $0.68$ & $0.80$ & $0.70$ & $1.38$ & $0.86$ & $0.026$ & $0.125$ \\
-    \texttt{Arch\_4} & Technogenic Solonchak & $0.88$ & $0.30$ & $0.32$ & $0.68$ & $0.66$ & $0.014$ & $0.055$ \\
-    \texttt{Arch\_5} & Sandy Forest Soil & $0.50$ & $0.22$ & $0.36$ & $0.44$ & $0.80$ & $0.022$ & $0.070$ \\
+    \texttt{Arch\_1} & Sod-Podzolic & $0.58$ & $0.55$ & $0.60$ & $1.00$ & $0.75$ & $0.018$ & $0.085$ & $0.068$ & $0.90$ \\
+    \texttt{Arch\_2} & Peat-Bog & $0.36$ & $0.44$ & $0.88$ & $1.18$ & $0.55$ & $0.012$ & $0.065$ & $0.054$ & $1.05$ \\
+    \texttt{Arch\_3} & Sod-Carbonate & $0.68$ & $0.80$ & $0.70$ & $1.38$ & $0.86$ & $0.026$ & $0.125$ & $0.088$ & $0.80$ \\
+    \texttt{Arch\_4} & Solonchak & $0.88$ & $0.30$ & $0.32$ & $0.68$ & $0.66$ & $0.014$ & $0.055$ & $0.046$ & $1.15$ \\
+    \texttt{Arch\_5} & Sandy Forest & $0.50$ & $0.22$ & $0.36$ & $0.44$ & $0.80$ & $0.022$ & $0.070$ & $0.060$ & $0.90$ \\
     \bottomrule
   \end{tabular}%
   }
@@ -129,17 +131,19 @@ To anchor $\tilde{P}(0)$ at test time without chemical measurements, I exploit t
 \end{equation}
 When deploying on real laboratory or field soils whose native $E_{\text{ref}}/M_{\text{ref}}$ ratio differs from $1.20$, per-series control normalization against uncontaminated day-0 controls (\texttt{is\_control\_G0 == 1} within each \texttt{soil\_series}) rescales $M(t)$ and $E(t)$ into the calibrated dimensionless ratio $E_{\text{norm}}(0)/M_{\text{norm}}(0) \approx 1.20$ before inference.
 
+\noindent\textbf{Proposition 2 (Gauge Symmetry \& Boundary Identifiability).} \emph{Under the scaling group $(\tilde{P}, K_{\text{tox}}, K_i, K_s, \gamma_p, \mu_{\text{sub}}) \mapsto (c\tilde{P}, cK_{\text{tox}}, cK_i, cK_s, \gamma_p/c, \mu_{\text{sub}}/c)$ for any $c > 0$, the observable trajectories $(M(t), E(t))$ in Eqs.~\eqref{eq:caputo_p}--\eqref{eq:caputo_e} are strictly invariant. Setting dimensionless $\text{EC}_{50}$ units ($K_{\text{tox}} \equiv K_i \equiv 1.0$) together with the stationary boundary ratio $E_{\text{ref}}/M_{\text{ref}}$ at $t_1 \to 0$ (Eq.~\eqref{eq:p0_boundary}) uniquely breaks this gauge symmetry (proof in Appendix~B).}
+
 \subsection{Encoder \texttt{Frac-KAT} \& Fractional Weight Tying}
 
-Given sparse observations $\mathbf{v}_j = [\text{pH}_{\text{norm}}, \text{NO}_{3,\text{norm}}, W_{\text{norm}}, M_{\text{obs}}, E_{\text{obs}}]^\top \in \mathbb{R}^5$ at irregular timestamps $0 \le t_1 < \dots < t_N \le 150\text{ days}$ with binary availability mask $\mathbf{m}_j \in \{0,1\}^5$ and rainfall flag $r_j \in \{0,1\}$, I construct the 12-dimensional token $\mathbf{u}_j = [\mathbf{v}_j\odot\mathbf{m}_j + 0.35(\mathbf{v}_j - \mathbf{v}_1)\odot\mathbf{m}_j,\, \mathbf{m}_j,\, \ln(1+t_j),\, r_j]^\top$. A single-layer causal Transformer encoder ($d_{\text{model}} = 48$, $1$ attention head, $\text{GELU}$ input projection, $\text{LayerNorm}$ residuals) aggregates the sequence; the Kolmogorov-Arnold functional representations are placed in the downstream \texttt{MultKANEnvModule} and \texttt{MLKANTrunk} rather than replacing attention projections with B-splines. To encode non-Markovian memory, I modulate causal self-attention logits with a logarithmic Abel-type decay term ($\varepsilon = 1.0$ via $\ln(1 + \Delta t_{ij})$ to avoid singularity at $t_i = t_j$):
+Given sparse observations $\mathbf{v}_j = [\text{pH}_{\text{norm}}, \text{NO}_{3,\text{norm}}, W_{\text{norm}}, M_{\text{obs}}, E_{\text{obs}}]^\top \in \mathbb{R}^5$ at irregular timestamps $0 \le t_1 < \dots < t_N \le 150\text{ days}$ with binary availability mask $\mathbf{m}_j \in \{0,1\}^5$ and rainfall flag $r_j \in \{0,1\}$, I construct the 12-dimensional token $\mathbf{u}_j = [\mathbf{v}_j\odot\mathbf{m}_j + 0.35(\mathbf{v}_j - \mathbf{v}_1)\odot\mathbf{m}_j,\, \mathbf{m}_j,\, \ln(1+t_j),\, r_j]^\top$. A single-layer causal Transformer encoder ($d_{\text{model}} = 48$, $1$ attention head, $\text{GELU}$ input projection $\mathbf{h}_0 = \operatorname{LayerNorm}(\operatorname{GELU}(\mathbf{W}_{\text{in}}\mathbf{u}))$, $\text{LayerNorm}$ residuals) aggregates the sequence; the Kolmogorov-Arnold functional representations are placed in the downstream \texttt{MultKANEnvModule} and \texttt{MLKANTrunk} rather than replacing attention projections with B-splines. To avoid any circular dependency, a lightweight pre-attention head (\texttt{alpha\_head}) predicts $\hat{\alpha}_i = 0.40 + 0.52\,\sigma(z_{\alpha,i}) \in [0.40, 0.92]$ from the causal cumulative mean of $\mathbf{h}_0$ \emph{before} computing the attention logits, modulating them with a logarithmic Abel-type decay term ($\varepsilon = 1.0$ via $\ln(1 + \Delta t_{ij})$ to avoid singularity at $t_i = t_j$):
 \begin{equation}
   \mathcal{A}_{ij} = \frac{\mathbf{q}_i^\top \mathbf{k}_j}{\sqrt{d_{\text{model}}}} - \operatorname{softplus}(\gamma_h)\,(1 - \hat{\alpha}_i)\,\ln\!\left(1 + \max(0, t_i - t_j)\right) \label{eq:abel_attn}
 \end{equation}
-for $t_i \ge t_j$ (and $\mathcal{A}_{ij} = -10^9$ for $t_i < t_j$). The encoder predicts $\hat{\alpha} = 0.40 + 0.52\,\sigma(z_\alpha) \in [0.40, 0.92]$ and epistemic uncertainty $\hat{\sigma}_\alpha = 0.01 + 0.15\,\operatorname{softplus}(z_\sigma)$ from the causal prefix mean. I enforce strict \textbf{Weight Tying}: the same scalar $\hat{\alpha}$ governs the attention kernel \eqref{eq:abel_attn}, the Soil Atlas coordinate, the Pad\'e Mittag-Leffler trunk, and $\text{IBSP}_{\hat{\alpha}}(t)$.
+for $t_i \ge t_j$ (and $\mathcal{A}_{ij} = -10^9$ for $t_i < t_j$). The final scalar $\hat{\alpha}$ and epistemic uncertainty $\hat{\sigma}_\alpha = 0.01 + 0.15\,\operatorname{softplus}(z_\sigma)$ are read from the last valid causal prefix step. I enforce strict \textbf{Weight Tying}: the same scalar $\hat{\alpha}$ governs the attention kernel \eqref{eq:abel_attn}, the Soil Atlas coordinate, the Pad\'e Mittag-Leffler trunk, and $\text{IBSP}_{\hat{\alpha}}(t)$.
 
 \subsection{Kernel \texttt{MittagLefflerPade34}: Pole-Free $[3/4]$ Pad\'e Basis}
 
-To approximate $E_{\alpha,1}(-z) = \sum_{k=0}^\infty \frac{(-z)^k}{\Gamma(\alpha k + 1)}$ globally on $z \in [0, \infty)$ with exact gradients $\partial E_{\alpha,1}/\partial\alpha$, I construct the rational Pad\'e $[3/4]$ approximant:
+Building on the global Pad\'e approximation framework of Zeng \& Chen~\cite{zeng2015}, I approximate $E_{\alpha,1}(-z) = \sum_{k=0}^\infty \frac{(-z)^k}{\Gamma(\alpha k + 1)}$ globally on $z \in [0, \infty)$ with exact gradients $\partial E_{\alpha,1}/\partial\alpha$ via a $[3/4]$ rational approximant:
 \begin{equation}
   E_{\alpha,1}(-z) \approx R_{[3/4]}^{(\alpha)}(z) = \frac{P_3(z)}{Q_4(z)} = \frac{1 + p_1 z + p_2 z^2 + p_3 z^3}{1 + q_1 z + q_2 z^2 + q_3 z^3 + q_4 z^4}. \label{eq:pade34}
 \end{equation}
@@ -155,7 +159,7 @@ Matching the Maclaurin series $1 - g_1 z + g_2 z^2 - g_3 z^3 + g_4 z^4 - g_5 z^5
   \begin{bmatrix} q_1 \\ q_2 \\ q_3 \\ q_4 \\ p_3 \end{bmatrix} =
   \begin{bmatrix} g_3 \\ -g_4 \\ g_5 \\ 0 \\ -g_2 \end{bmatrix}. \label{eq:pade_system}
 \end{equation}
-I solve Eq.~\eqref{eq:pade_system} in \texttt{float64} via \texttt{torch.linalg.solve} and apply a $C^1$-smoothstep bridge on $\alpha \in (0.90, 1.0]$: letting $s = (\alpha - 0.90)/0.10$ and $w(s) = 3s^2 - 2s^3$, $E_{\alpha,1}(-z) = (1 - w(s)) R_{[3/4]}^{(0.90)}(z) + w(s) e^{-z}$. Dense numerical verification across $61$ values of $\alpha \in [0.40, 0.90]$ and $250$ log-spaced nodes $z \in [10^{-3}, 10^3]$ confirms that the denominator empirically maintains $Q_4(z) \ge 1.000978 > 1$ across the entire operating regime, avoiding positive real poles.
+I solve Eq.~\eqref{eq:pade_system} in \texttt{float64} via \texttt{torch.linalg.solve} and apply a $C^1$-smoothstep bridge on $\alpha \in (0.90, 1.0]$: letting $s = (\alpha - 0.90)/0.10$ and $w(s) = 3s^2 - 2s^3$, $E_{\alpha,1}(-z) = (1 - w(s)) R_{[3/4]}^{(0.90)}(z) + w(s) e^{-z}$. Freezing $R_{[3/4]}^{(0.90)}(z)$ in this blend prevents degeneracy of $m_k = 1/\Gamma(1-k\alpha)$ as $\alpha \to 1$ while preserving $C^1$ continuity at $0.90$ and $1.0$. \noindent\textbf{Proposition 1 (Global Positivity, $[0, +\infty)$ Pole-Freedom, \& $C^1$ Continuity).} \emph{Across $501$ grid points in $\alpha \in [0.40, 0.90]$, all denominator coefficients of Eq.~\eqref{eq:pade34} remain strictly positive ($\min q_1 = 0.9777$, $\min q_2 = 0.4342$, $\min q_3 = 0.1095$, $\min q_4 = 0.0146 > 0$). By Descartes' Rule of Signs, $Q_4(z)$ has zero positive real roots on the entire infinite half-line $z \in [0, +\infty)$ with $\min_{z\ge 0} Q_4(z) = Q_4(0) = 1.000000$ ($\ge 1.000978$ for $z \ge 10^{-3}$), while $(0.90, 0.92]$ inherits pole-freedom and $C^1$ continuity from the smoothstep blend with $e^{-z}$ (Appendix~B).}
 
 \begin{figure*}[!htbp]
   \centering
@@ -170,20 +174,20 @@ To discover environmental rate modifiers symbolically \cite{liu2024kan2}, \textt
 \begin{equation}
   \Phi_{\text{KAN}}(\mathbf{e}) = e^{-\beta_{\text{pH}}(\text{pH}_{\text{norm}} - \text{pH}_{\text{opt}})^2}\sum_{b=1}^2 w_b\exp\!\left(\sum_{c=1}^3 W_{\text{power},b,c}\ln e_c\right), \label{eq:multkan}
 \end{equation}
-regularized by $\mathcal{L}_{L1} = \|\mathbf{W}_{\text{power}}\|_1$ so that redundant power weights on $\text{pH}_{\text{norm}}$ prune to zero while $\text{NO}_{3,\text{norm}}$ and $W_{\text{norm}}$ exponents emerge cleanly. Next, \texttt{PhysicsExpertBank} routes $[\mathbf{h}_{\text{final}}, \Phi_{\text{KAN}}, \text{pH}_{\text{norm}}, \Delta E_{\text{drop}}, \Delta M_{\text{drop}}, \tilde{P}_{\text{boundary}}(0)] \in \mathbb{R}^{53}$ (where $\Delta E_{\text{drop}} = \min_t E_{\text{obs}}/\max_t E_{\text{obs}}$) through a temperature-annealed Top-2 sparse gate ($\tau: 2.0 \to 0.5$) across $K_{\text{exp}}=4$ physical experts (Haldane inhibition, Monod saturation, Abiotic clean background, Acidic/osmotic stress) with load-balancing loss $\mathcal{L}_{\text{balance}} = K_{\text{exp}}\sum_{e=1}^{4} f_e \bar{P}_e$, producing the physics-conditioned representation:
+regularized by $\mathcal{L}_{L1} = \|\mathbf{W}_{\text{power}}\|_1$ so that redundant power weights on $\text{pH}_{\text{norm}}$ prune to zero while $\text{NO}_{3,\text{norm}}$ and $W_{\text{norm}}$ exponents emerge cleanly. Next, \texttt{PhysicsExpertBank} routes $[\mathbf{h}_{\text{final}}, \Phi_{\text{KAN}}, \text{pH}_{\text{norm}}, \Delta E_{\text{drop}}, \Delta M_{\text{drop}}, \tilde{P}_{\text{boundary}}(0)] \in \mathbb{R}^{53}$ (where $\mathbf{h}_{\text{final}} \in \mathbb{R}^{48}$) (where $\Delta E_{\text{drop}} = \min_t E_{\text{obs}}/\max_t E_{\text{obs}}$) through a temperature-annealed Top-2 sparse gate ($\tau: 2.0 \to 0.5$) across $K_{\text{exp}}=4$ physical experts (Haldane inhibition, Monod saturation, Abiotic clean background, Acidic/osmotic stress) with load-balancing loss $\mathcal{L}_{\text{balance}} = K_{\text{exp}}\sum_{e=1}^{4} f_e \bar{P}_e$, producing the physics-conditioned representation:
 \begin{equation}
   \mathbf{h}_{\text{ctx}} = \mathbf{h}_{\text{final}} + \sum_{e \in \text{Top-2}} \tilde{w}_e\,\operatorname{GELU}\!\left(\mathbf{W}_e \mathbf{h}_{\text{final}} + \mathbf{b}_e\right). \label{eq:h_ctx}
 \end{equation}
 
 \subsection{Two-Stage Inference, Explicit $M(t)$ / $E(t)$ Expansions, \& $\text{IBSP}_\alpha(t)$}
 
-During offline calibration, \texttt{SoilAtlasModule} assigns each field to the 5 Soil Atlas archetypes via KL-divergence against Dirichlet mixture weights and computes the composite anomaly metric $d_{\min} = 0.25\,d_{\text{raw}} + 0.75\tanh(0.42\tilde{P}_{\text{boundary}}(0))$, with optimal Youden threshold $d_{\min}^* = 0.290$ frozen on \texttt{Val (500)}. At test time ($0.50\text{ ms/field}$), \texttt{MLKANTrunk} maps $\mathbf{h}_{\text{ctx}}$ via a linear head $\mathbf{W}_{\text{head}}\mathbf{h}_{\text{ctx}} + \mathbf{b}_{\text{head}} \in \mathbb{R}^{18}$ to decay rates $\lambda_{1..3}$, mode amplitudes $(c_P, c_M, c_E) \in \mathbb{R}^{3\times 3}$, and asymptotic equilibria $M_\infty = \operatorname{clamp}(M_{\max,\text{obs}} + \Delta M_\infty, 0.15, 2.5)$ and $E_\infty = \operatorname{clamp}(1.18\,M_\infty + \Delta E_\infty, 0.15, 3.0)$, yielding closed-form trajectories for all three state variables:
+During offline calibration, \texttt{SoilAtlasModule} assigns each field to the 5 Soil Atlas archetypes via KL-divergence against Dirichlet mixture weights and computes the composite anomaly metric $d_{\min} = 0.25\,d_{\text{raw}} + 0.75\tanh(0.42\tilde{P}_{\text{boundary}}(0))$, with optimal Youden threshold $d_{\min}^* = 0.290$ frozen on \texttt{Val (500)}. At test time ($0.50\text{ ms/field}$), \texttt{MLKANTrunk} maps $\mathbf{h}_{\text{ctx}}$ via a linear head $\mathbf{W}_{\text{head}}\mathbf{h}_{\text{ctx}} + \mathbf{b}_{\text{head}} \in \mathbb{R}^{18}$ to $3$ decay rates $\lambda_{1..3}$, $9$ mode amplitudes $(c_P, c_M, c_E) \in \mathbb{R}^{3\times 3}$, $2$ equilibrium shifts $(\Delta M_\infty, \Delta E_\infty)$ giving $M_\infty = \operatorname{clamp}(M_{\max,\text{obs}} + \Delta M_\infty, 0.15, 2.5)$ and $E_\infty = \operatorname{clamp}(1.18\,M_\infty + \Delta E_\infty, 0.15, 3.0)$, and $4$ effective kinetic rates $(k_{p,\text{eff}}, k_{\text{deg,eff}}, r_{m,\text{eff}}, \beta_{E,\text{eff}})$ used inside $\mathcal{L}_{\text{phys}}$, yielding closed-form trajectories:
 \begin{align}
   \tilde{P}_{\text{bio}}(t) &= g(d_{\min})\sum_{k=1}^3 c_{P,k}\,E_{\hat{\alpha},1}\!\left(-\lambda_k t^{\hat{\alpha}}\right), \label{eq:p_exp} \\
   M(t) &= M_\infty + \sum_{k=1}^3 c_{M,k}\,E_{\hat{\alpha},1}\!\left(-\lambda_k t^{\hat{\alpha}}\right), \label{eq:m_exp} \\
   E(t) &= E_\infty + \sum_{k=1}^3 c_{E,k}\,E_{\hat{\alpha},1}\!\left(-\lambda_k t^{\hat{\alpha}}\right), \label{eq:e_exp}
 \end{align}
-where $g(d_{\min}) = 1$ for $d_{\min} \ge 0.5\,d_{\min}^*$ and $\sigma((d_{\min} - 0.35\,d_{\min}^*)/0.025)$ otherwise. Because $D_t^{\hat{\alpha}} E_{\hat{\alpha},1}(-\lambda_k t^{\hat{\alpha}}) = -\lambda_k E_{\hat{\alpha},1}(-\lambda_k t^{\hat{\alpha}})$ holds analytically, the Caputo physics-informed loss $\mathcal{L}_{\text{phys}}$ is evaluated in closed form. Finally, the dynamic soil health index uses nominal memory weight $\lambda_{\text{mem}} = 0.25$:
+where $g(d_{\min}) = 1$ for $d_{\min} \ge 0.5\,d_{\min}^*$ and $\sigma((d_{\min} - 0.35\,d_{\min}^*)/0.025)$ otherwise (suppressing spurious residual $\tilde{P}_{\text{bio}}$ noise on clean soils). Because $D_t^{\hat{\alpha}} M_\infty = 0$, $D_t^{\hat{\alpha}} E_\infty = 0$, and $D_t^{\hat{\alpha}} E_{\hat{\alpha},1}(-\lambda_k t^{\hat{\alpha}}) = -\lambda_k E_{\hat{\alpha},1}(-\lambda_k t^{\hat{\alpha}})$ hold analytically, the Caputo physics-informed loss $\mathcal{L}_{\text{phys}}$ is evaluated in closed form on collocation nodes across $t \in [0, 365]\text{ days}$ using $\Phi_{\text{KAN}}$. Finally, the dynamic soil health index uses nominal memory weight $\lambda_{\text{mem}} = 0.25$:
 \begin{equation}
   \begin{aligned}
     \text{IBSP}_\alpha(t) &= 100\exp\!\Biggl(-\biggl[0.35\left|\ln\frac{M(t)}{M_\infty}\right| \\
@@ -200,13 +204,13 @@ TerraKAN has $21,036$ trainable parameters and is trained strictly under an \tex
     &\quad + 0.02\,\mathcal{L}_{L1} + 0.05\,\mathcal{L}_{\text{balance}} + 0.35\,\mathcal{L}_{\text{kan}},
   \end{aligned} \label{eq:ltotal}
 \end{equation}
-where $\mathcal{L}_{\text{data}} = \mathcal{L}_{\text{MSE}}(M) + \mathcal{L}_{\text{MSE}}(E) + 0.35\,\|\tilde{P}_{\text{bio}}(0) - \tilde{P}_{\text{boundary}}(0)\|_2^2$, $\mathcal{L}_{\text{phys}}$ penalizes the Caputo ODE residuals of Eqs.~\eqref{eq:caputo_p}--\eqref{eq:caputo_e}, $\mathcal{L}_{\text{atlas}}$ is the KL-divergence to true Dirichlet soil weights, and $\mathcal{L}_{\text{kan}} = \|\Phi_{\text{KAN}} - \Phi_{\text{true}}\|_2^2$. Additionally, at epochs $\{8, 24, 55, 95, 135, 160\}$, closed-form ridge regression aligns the linear heads (\texttt{alpha\_head}, \texttt{atlas.feature\_extractor}, and \texttt{trunk.param\_head}) against ground-truth simulator targets $(\tilde{P}_{\text{true}}, M_{\text{true}}, E_{\text{true}}, \alpha_{\text{true}})$ on \texttt{Train (3000)}. Thus, TerraKAN uses synthetic ground-truth supervision during offline amortized training, while operating purely from sparse $(M, E, \text{env})$ observations with \textbf{zero} test-time optimization and \textbf{zero} test-time access to $\tilde{P}_{\text{true}}$ or $\alpha_{\text{true}}$.
+Optionally, adding $+0.05\,\mathcal{L}_{\text{NLL}}(\hat{\alpha}, \hat{\sigma}_\alpha)$ calibrates epistemic uncertainty $\hat{\sigma}_\alpha$ via heteroscedastic Gaussian NLL. Here $\mathcal{L}_{\text{data}} = \mathcal{L}_{\text{MSE}}(M) + \mathcal{L}_{\text{MSE}}(E) + 0.35\,\|\tilde{P}_{\text{bio}}(0) - \tilde{P}_{\text{boundary}}(0)\|_2^2$, $\mathcal{L}_{\text{phys}}$ penalizes the Caputo ODE residuals of Eqs.~\eqref{eq:caputo_p}--\eqref{eq:caputo_e}, $\mathcal{L}_{\text{atlas}}$ is the KL-divergence to true Dirichlet soil weights, and $\mathcal{L}_{\text{kan}} = \|\Phi_{\text{KAN}} - \Phi_{\text{true}}\|_2^2$. Additionally, at epochs $\{8, 24, 55, 95, 135, 160\}$, closed-form ridge regression aligns the linear heads (\texttt{alpha\_head}, \texttt{atlas.feature\_extractor}, and \texttt{trunk.param\_head}) against ground-truth simulator targets $(\tilde{P}_{\text{true}}, M_{\text{true}}, E_{\text{true}}, \alpha_{\text{true}})$ on \texttt{Train (3000)} to stabilize readout scales during early epochs. Thus, TerraKAN uses synthetic ground-truth supervision during offline amortized training, while operating purely from sparse $(M, E, \text{env})$ observations with \textbf{zero} test-time optimization and \textbf{zero} test-time access to $\tilde{P}_{\text{true}}$ or $\alpha_{\text{true}}$.
 
 \section{Numerical Verification \& Empirical Benchmarks}
 
 \begin{table*}[!htbp]
   \centering
-  \caption{\textbf{Blind Long-Horizon Extrapolation Benchmark ($t \in (150, 365]\text{ days}$, $N=500$ Test Fields, $50\%$ Missingness, $25\%$ Noise).} Confidence intervals ($\pm\text{CI}_{95\%}$) are computed via $1000\times$ bootstrap. CPU latency is measured per field.}
+  \caption{\textbf{Blind Long-Horizon Extrapolation Benchmark ($t \in (150, 365]\text{ days}$, $N=500$ Test Fields, $50\%$ channel-wise missingness, $25\%$ noise; $1000\times$ bootstrap $\pm\text{CI}_{95\%}$).} \texttt{TerraKAN} and \texttt{ChebPIKAN} are capacity-matched ($21,036$ params); \texttt{MAP-ODE} evaluates $\text{IBSP}_\alpha$ at $\alpha=1$ (zero memory penalty).}
   \label{tab:extrap_benchmark}
   \footnotesize
   \resizebox{\textwidth}{!}{%
@@ -217,6 +221,8 @@ where $\mathcal{L}_{\text{data}} = \mathcal{L}_{\text{MSE}}(M) + \mathcal{L}_{\t
     \textbf{TerraKAN (Mine)} & $21,036$ & $\mathbf{0.50}$ ($104\times$ vs FDE) & $\mathbf{0.908 \pm 0.019}$ ($\mathbf{0.181}$) & $0.894 \pm 0.015$ ($0.114$) & $0.910 \pm 0.013$ ($0.166$) & $\mathbf{0.886 \pm 0.016}$ ($\mathbf{6.88\%}$) \\
     \texttt{MAP-FDE} (Diethelm ABM + Prior) & $5$ & $51.98$ & $0.802 \pm 0.037$ ($0.265$) & $\mathbf{0.934 \pm 0.012}$ ($\mathbf{0.090}$) & $\mathbf{0.928 \pm 0.015}$ ($\mathbf{0.149}$) & $0.849 \pm 0.028$ ($7.93\%$) \\
     \texttt{MAP-ODE} (Integer ODE + Prior) & $5$ & $5.01$ & $-0.191 \pm 0.225$ ($0.651$) & $0.900 \pm 0.019$ ($0.111$) & $0.891 \pm 0.020$ ($0.183$) & $0.769 \pm 0.045$ ($9.81\%$) \\
+\texttt{Latent-ODE} (RK4, $\alpha=1$) & $18,152$ & $1.96$ & $0.484 \pm 0.068$ ($0.429$) & $0.694 \pm 0.031$ ($0.194$) & $0.562 \pm 0.042$ ($0.367$) & $0.494 \pm 0.071$ ($14.53\%$) \\
+\texttt{DeepONet} (Branch-Trunk) & $40,515$ & $0.19$ & $0.560 \pm 0.055$ ($0.396$) & $0.730 \pm 0.028$ ($0.183$) & $0.146 \pm 0.064$ ($0.513$) & $0.292 \pm 0.027$ ($17.19\%$) \\
     \texttt{Simple-ML-MLP} (No Abel/MoE) & $3,763$ & $0.43$ & $0.702 \pm 0.040$ ($0.326$) & $0.900 \pm 0.016$ ($0.111$) & $0.888 \pm 0.015$ ($0.185$) & $0.742 \pm 0.032$ ($10.37\%$) \\
     \texttt{ChebPIKAN} (Poly $T_0\dots T_5$) & $21,036$ & $0.57$ & $-8.132 \pm 3.014$ ($1.804$) & $-2.173 \pm 0.586$ ($0.626$) & $-1.223 \pm 0.305$ ($0.827$) & $-0.909 \pm 0.341$ ($28.23\%$) \\
     \bottomrule
@@ -235,7 +241,7 @@ where $\mathcal{L}_{\text{data}} = \mathcal{L}_{\text{MSE}}(M) + \mathcal{L}_{\t
 
 Figure~\ref{fig:fig1} confirms that \texttt{MittagLefflerPade34} matches the exact Oberhettinger contour integral across $z \in [10^{-3}, 10^3]$ with $\max|\Delta| = 7.67\times 10^{-7}$ ($\alpha=0.30$), $3.85\times 10^{-5}$ ($\alpha=0.50$), and $1.12\times 10^{-3}$ ($\alpha=0.78$), passing \texttt{float64} \texttt{gradcheck} and matching the Diethelm ABM Caputo solver \cite{diethelm2002predictor} within $0.00331\%$.
 
-Table~\ref{tab:extrap_benchmark} and Figure~\ref{fig:fig2} summarize blind extrapolation on $t \in (150, 365]\text{ days}$ across $N=500$ test scenarios. Even when compared against the fractional-order \texttt{MAP-FDE} baseline ($R^2_M = 0.934$, $R^2_E = 0.928$), \textbf{TerraKAN achieves superior reconstruction of the unmeasured contaminant $\tilde{P}(t)$ ($R^2 = 0.908 \pm 0.019$ vs.\ $0.802 \pm 0.037$, $\text{MBE} = +0.0079\,\text{EC}_{50}$) and $\text{IBSP}_\alpha(t)$ ($R^2 = 0.886$ vs.\ $0.849$) while running $104\times$ faster ($0.50\text{ ms}$ vs.\ $51.98\text{ ms}$)}.
+Table~\ref{tab:extrap_benchmark} and Figure~\ref{fig:fig2} summarize blind extrapolation on $t \in (150, 365]\text{ days}$ across $N=500$ test scenarios. Even when compared against the fractional-order \texttt{MAP-FDE} baseline ($R^2_M = 0.934$, $R^2_E = 0.928$), \textbf{TerraKAN achieves superior reconstruction of the unmeasured contaminant $\tilde{P}(t)$ ($R^2 = 0.908 \pm 0.019$ vs.\ $0.802 \pm 0.037$, $\text{MBE} = +0.018\,\text{EC}_{50}$) and $\text{IBSP}_\alpha(t)$ ($R^2 = 0.886$ vs.\ $0.849$) while running $104\times$ faster ($0.50\text{ ms}$ vs.\ $51.98\text{ ms}$)}.
 
 \subsection{Hysteresis, False-Negative Safety \& Soil Typing (Figures 3--4)}
 
@@ -253,7 +259,7 @@ In Figure~\ref{fig:fig4}, \texttt{SoilAtlasModule} achieves $\text{Macro-Acc} = 
 \begin{figure*}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig4_soil_atlas_passport.png}
-  \caption{\textbf{Soil Atlas Classification, Fractional Order $\alpha$ Recovery, and Multi-Seed Anomaly Detector Audit.} \textbf{(A)} Confusion matrix on \texttt{Test (500)} ($\text{Macro-Acc} = 88.4\%$, $\text{Macro-F1} = 0.890$). \textbf{(B)} Blind recovery of $\alpha$ ($R^2 = 0.9248$, $\text{RMSE} = 0.0240$). \textbf{(C)} Val vs.\ Test ROC curve at frozen $d_{\min}^* = 0.290$ and 5-seed stratified gap audit ($|\Delta\text{TPR}| = 1.85\% \pm 0.95\% < 4.0\%$).}
+  \caption{\textbf{Soil Atlas Classification, Fractional Order $\alpha$ Recovery, and Multi-Seed Anomaly Detector Audit.} \textbf{(A)} Confusion matrix on \texttt{Test (500)} ($\text{Macro-Acc} = 88.4\%$, $\text{Macro-F1} = 0.890$). \textbf{(B)} Blind recovery of $\alpha$ ($R^2 = 0.9248$, $\text{RMSE} = 0.0240$). \textbf{(C)} Test ($500$) anomaly distance ($d_{\min}$) distributions at frozen threshold $d_{\min}^* = 0.290$ and 5-seed audit ($|\Delta\text{TPR}| = 1.85\% \pm 0.95\% < 4.0\%$, $\text{TPR}=82.6\%$, $\text{FPR}=4.5\%$).}
   \label{fig:fig4}
 \end{figure*}
 
@@ -261,11 +267,11 @@ In Figure~\ref{fig:fig4}, \texttt{SoilAtlasModule} achieves $\text{Macro-Acc} = 
 
 Figure~\ref{fig:fig5} shows that \texttt{MultKAN} recovers the true nitrate ($0.345$ vs.\ $0.350$) and moisture ($0.394$ vs.\ $0.400$) exponents and Shelford pH bell $\exp(-2.36(\text{pH}-0.66)^2)$ vs.\ $\exp(-2.50(\text{pH}-0.65)^2)$ (Fig.~\ref{fig:fig5}A), \texttt{PhysicsExpertBank} specializes across the 4 regimes (Fig.~\ref{fig:fig5}B), and symbolic serialization matches neural tensor outputs to $\max|\Delta_{\text{exact}}| = 9.96\times 10^{-13}$ in \texttt{float64} (Fig.~\ref{fig:fig5}C, Symbolic Serialization \& Inference Equivalence Check).
 
-In Figure~\ref{fig:fig6} and Table~\ref{tab:ablation}, TerraKAN retains $R^2 = 0.788$ under $40\%$ noise (Fig.~\ref{fig:fig6}B) and generalizes zero-shot to alien physics (Two-Compartment Sorption + Weibull: $\text{RMSE} = 4.14\%$ vs.\ $6.30\%$ for \texttt{MAP-ODE}; Out-of-Atlas $\alpha \in [0.35, 0.96]$: $\text{RMSE} = 8.11\%$ vs.\ $13.08\%$, Fig.~\ref{fig:fig6}A). Finally, Figure~\ref{fig:fig7} presents a \textbf{synthetic dry-run} check of \texttt{terrakan\_v4\_frozen.pt} on 36 simulated microcosm vessels ($0\dots 28\text{ d} \to 60\text{ d}$) across \texttt{S1\_sand}, \texttt{S2\_loam}, and \texttt{S3\_peat}, confirming zero \texttt{is\_control\_G0} leakage and $100\%$ separation across \texttt{G0} ($6/6$), \texttt{G1} ($8/8$), and \texttt{G2+G3} ($22/22$).
+In Figure~\ref{fig:fig6} and Table~\ref{tab:ablation}, TerraKAN retains $R^2 = 0.788$ under $40\%$ noise (Fig.~\ref{fig:fig6}B) and generalizes zero-shot at $25\%$ observation noise to alien physics (Two-Compartment Sorption + Weibull: $\text{RMSE} = 4.14\%$ vs.\ $6.30\%$ for \texttt{MAP-ODE}; Out-of-Atlas $\alpha \in [0.35, 0.96]$: $\text{RMSE} = 8.11\%$ vs.\ $13.08\%$, Fig.~\ref{fig:fig6}A). Finally, Figure~\ref{fig:fig7} presents a \textbf{synthetic dry-run} check of \texttt{terrakan\_v4\_frozen.pt} on 36 simulated microcosm vessels ($0\dots 28\text{ d} \to 60\text{ d}$) across \texttt{S1\_sand}, \texttt{S2\_loam}, and \texttt{S3\_peat}, confirming zero \texttt{is\_control\_G0} leakage and $100\%$ separation across \texttt{G0} ($6/6$), \texttt{G1} ($8/8$), and \texttt{G2+G3} ($22/22$).
 
 \begin{table}[!htbp]
   \centering
-  \caption{\textbf{3-Seed Ablation Study on Extrapolation $\text{IBSP}_\alpha(t)$ ($150 \to 365\text{ d}$, Seeds 42, 101, 777).}}
+  \caption{\textbf{3-Seed Ablation Study on Extrapolation $\text{IBSP}_\alpha(t)$ ($150 \to 365\text{ d}$, mean $\pm$ SD across Seeds 42, 101, 777; cf.\ Table~\ref{tab:extrap_benchmark} for single-seed 42 $1000\times$ bootstrap CI).}}
   \label{tab:ablation}
   \footnotesize
   \resizebox{\linewidth}{!}{%
@@ -280,10 +286,27 @@ In Figure~\ref{fig:fig6} and Table~\ref{tab:ablation}, TerraKAN retains $R^2 = 0
     5. w/o Fractional $\alpha$ Weight Tying & $0.781 \pm 0.011$ & $9.70 \pm 0.30$ \\
     6. w/o Abel Memory Kernel (\texttt{Simple-ML-MLP}) & $0.743 \pm 0.015$ & $10.88 \pm 0.36$ \\
     7. Classical \texttt{MAP-ODE} (Atlas L2 Prior) & $0.769 \pm 0.019$ & $9.83 \pm 0.38$ \\
+    \midrule
+    Ref. Classical \texttt{MAP-FDE} (Diethelm ABM, Seed 42) & $0.849 \pm 0.028$ & $7.93$ \\
+    \midrule
+    Exp.~1a: w/o $\mathcal{L}_{\text{kan}}$ Supervision ($W_p=[0, 0.203, 0.246]$) & $0.883 \pm 0.015$ & $6.98$ \\
+    Exp.~1b: w/o Periodic Ridge Alignment (Pure Adam) & $0.315 \pm 0.046$ & $16.91$ \\
+    Exp.~1c: Pure Unsupervised Physics-Informed & $0.090 \pm 0.061$ & $19.48$ \\
+    Exp.~2a: Abel Kernel (Clustered 70\% Gap, $\text{IBSP}_\alpha$) & $0.377$ & $16.12$ \\
+    Exp.~2b: Markovian Exp-ALiBi (Clustered 70\% Gap) & $-10.927$ & $70.54$ \\
     \bottomrule
   \end{tabular}%
   }
 \end{table}
+
+\subsection{Horizon Completeness, Uncertainty Calibration, \& Noisy \texttt{G0} Audit (Figure~\ref{fig:fig8})}
+
+Figure~\ref{fig:fig8} summarizes three additional operational audits on \texttt{Test (500)}:
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+  \item \textbf{Slim ($N=1$) vs.\ Longitudinal Monitoring (Fig.~\ref{fig:fig8}A):} \texttt{IBSP}$_\alpha$ extrapolation $R^2$ rises monotonically with observation completeness from $0.221$ ($N=1, t=0$) to $0.463$ ($N=2$, $14\text{ d}$), $0.502$ ($N=3$, $14\text{ d}$), $0.606$ ($N=5$, $21\text{ d}$ bot protocol), and $0.884$ ($N=7$, $150\text{ d}$), justifying a two-tier screening vs.\ 3-week longitudinal workflow.
+  \item \textbf{Uncertainty Calibration (Fig.~\ref{fig:fig8}B):} Training with $+0.05\,\mathcal{L}_{\text{NLL}}$ yields calibrated epistemic uncertainty ($\bar{\hat{\sigma}}_\alpha = 0.0267$, $\text{RMSE}(\hat{\alpha}) = 0.0238$), achieving $73.6\%$ ($1\sigma$) and $96.6\%$ ($1.96\sigma$) empirical coverage on \texttt{Test (500)} and graceful coverage degradation ($99.5\% \to 88.5\%$) across $5\%\text{--}40\%$ noise.
+  \item \textbf{Heavy-Tailed Abel vs.\ Exp-ALiBi \& Noisy \texttt{G0} (Fig.~\ref{fig:fig8}C):} Under clustered $70\%$ missingness ($[0,7,14,21]\text{ d} + 120\text{ d}$), Abel attention retains $\text{IBSP}_\alpha$ $R^2 = 0.377$ ($\text{RMSE}=16.1\%$) whereas Markovian \texttt{Exp-ALiBi} collapses to $R^2 = -10.93$ ($70.5\%$). Under native $E_{\text{ref}}/M_{\text{ref}} \sim U(0.7, 2.0)$ with $15\%$ \texttt{G0} noise, per-series \texttt{G0} normalization improves $\tilde{P}$ reconstruction ($R^2: 0.886 \to 0.891$, $\text{RMSE}: 0.201 \to 0.197$).
+\end{itemize}
 
 \section{Limitations \& Inverse-Crime Considerations}
 
@@ -293,6 +316,12 @@ An honest scientific evaluation requires noting three limitations of the present
   \item \textbf{Synthetic Dry-Run vs.\ Wet-Lab Data:} The 36-vessel microcosm validation in Fig.~\ref{fig:fig7} is a synthetic dry-run verification of the CSV preprocessing and inference pipeline prior to wet-lab execution. Empirical calibration of $E_{\text{ref}}/M_{\text{ref}}$ via real day-0 controls (\texttt{G0}) remains to be tested on physical soil samples.
   \item \textbf{Fixed Boundary Ratio Assumption:} Without per-series \texttt{G0} normalization, Eq.~\eqref{eq:p0_boundary} assumes $E_{\text{ref}}/M_{\text{ref}} \approx 1.20$; soils with strongly divergent baseline enzyme-to-biomass ratios require control-group normalization.
 \end{enumerate}
+
+\section{Conclusion \& Deployment Outlook}
+
+In this study, I introduced \texttt{TerraKAN} (\texttt{Frac-ML-KAT-MoE}), an amortized simulation-based inference architecture unifying causal Abel-type fractional attention, a pole-free $[3/4]$ Pad\'e Mittag-Leffler spectral basis ($Q_4(z) \ge 1.000978$), \texttt{MultKAN} environmental power-law discovery, and a sparse biokinetic Mixture-of-Experts. On $N=500$ held-out test scenarios under $50\%$ channel-wise missingness and $25\%$ noise, \texttt{TerraKAN} reconstructs unmeasured contaminant loads $\tilde{P}(t)$ at $R^2 = 0.908 \pm 0.019$ and $\text{IBSP}_\alpha(t)$ at $R^2 = 0.886 \pm 0.016$ in $0.50\text{ ms/field}$---outperforming integer-order \texttt{MAP-ODE} ($10\times$ speedup) and fractional-order \texttt{MAP-FDE} ($104\times$ speedup).
+
+Immediate next steps focus on executing the wet-lab 36-vessel microcosm experiment using the frozen checkpoint (\texttt{terrakan\_v4\_frozen.pt}) and \texttt{process\_buckets\_csv.py}, alongside a two-tier field deployment: a lightweight screening tier for rapid single-visit triage and the full dynamic \texttt{TerraKAN} pipeline for 3-week longitudinal monitoring with automated rainfall flag ($r_j$) and GPS soil-prior lookup, while the core fractional attention and Pad\'e Mittag-Leffler primitives are immediately reusable across general SciML and irregular time-series tasks via \texttt{pip install abelkan} (\href{https://pypi.org/project/abelkan/}{PyPI}).
 
 \begin{figure*}[!htbp]
   \centering
@@ -318,6 +347,26 @@ An honest scientific evaluation requires noting three limitations of the present
   \label{fig:fig7}
 \end{figure*}
 
+\begin{figure*}[!htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig8_v110_horizon_uncertainty.png}
+  \vspace{-1mm}
+  \caption{\textbf{Operational Horizon Completeness, Uncertainty Calibration, and Heavy-Tailed Memory Audits.} \textbf{(A)} Monotonic accuracy transition from single-visit Slim ($N=1$) to 21-day ($N=5$) and 150-day ($N=7$) regimes. \textbf{(B)} Empirical $95\%$ coverage of $\hat{\sigma}_\alpha$ across $5\%\text{--}40\%$ noise. \textbf{(C)} Abel power-law vs.\ Markovian \texttt{Exp-ALiBi} under $70\%$ clustered missingness and noisy \texttt{G0} scale-mismatch.}
+  \label{fig:fig8}
+\end{figure*}
+
+\subsection*{AI Usage Disclosure}
+During manuscript preparation and code engineering, I used AI-assisted tooling for LaTeX typesetting, refactoring, and automated unit-test scaffolding; all mathematical derivations, model architecture design, simulation experiments, and scientific claims were authored, executed, and verified by me.
+
+\appendix
+\section{Simulator Constants \& Baseline Hyperparameters}
+In Eqs.~\eqref{eq:caputo_p}--\eqref{eq:caputo_e}, $K_i \equiv 1.0$, $\beta_E = 0.09$, $\delta_E = 0.075$ ($E_{\text{ref}}/M_{\text{ref}} = 1.20$), $\gamma_p \in [0.011, 0.022]$, $\mu_{\text{sub}} \in [0.030, 0.058]$, and $K_s \in [0.80, 1.15]$ (Table~\ref{tab:soil_atlas}). Rainfall pulses ($r_j=1$, probability $0.18$) transiently modulate moisture $W_{\text{norm}}$. All neural baselines (\texttt{TerraKAN}, \texttt{ChebPIKAN}, \texttt{Latent-ODE} [$18,152$ params, 38-step RK4], \texttt{DeepONet} [$40,515$ params, $128$-wide branch / $64$-wide trunk]) are trained for $160$ epochs on CPU (\texttt{float64}, \texttt{Adam}, $\text{lr}=2.5\times 10^{-3}$, batch size $64$).
+
+\section{Proofs of Propositions 1 and 2}
+\noindent\textbf{Proof of Proposition 1.} Across $501$ uniformly spaced $\alpha \in [0.40, 0.90]$, the exact linear solve of Eq.~\eqref{eq:pade_system} yields $\min q_1 = 0.9777$, $\min q_2 = 0.4342$, $\min q_3 = 0.1095$, and $\min q_4 = 0.0146 > 0$. Since $Q_4(z) = 1 + \sum_{k=1}^4 q_k z^k$ has zero sign changes, Descartes' Rule of Signs guarantees zero positive real roots on $[0, +\infty)$. Moreover, $Q_4'(z) > 0$ for all $z \ge 0$, so $\min_{z\ge 0} Q_4(z) = Q_4(0) = 1.000000$. At $\alpha=0.90$, $w(0)=w'(0)=0$ and at $\alpha=1.0$, $w(1)=1, w'(1)=0$ for $w(s)=3s^2-2s^3$, ensuring $C^1$ continuity. $\square$
+
+\noindent\textbf{Proof of Proposition 2.} Substituting $\tilde{P} = P / K_{\text{tox}}$ and rescaling $(K_i, K_s) \mapsto (cK_i, cK_s)$ with $(\gamma_p, \mu_{\text{sub}}) \mapsto (\gamma_p/c, \mu_{\text{sub}}/c)$ leaves $M(t)$ and $E(t)$ unchanged in Eqs.~\eqref{eq:caputo_p}--\eqref{eq:caputo_e}. Fixing $K_{\text{tox}} \equiv K_i \equiv 1.0$ eliminates $c$, and Eq.~\eqref{eq:p0_boundary} uniquely determines $\tilde{P}(0)$ whenever $E_{\text{ref}}/M_{\text{ref}}$ is known or calibrated via \texttt{G0}. $\square$
+
 \begin{thebibliography}{10}
 \footnotesize
 \setlength{\itemsep}{1.5pt}
@@ -337,6 +386,12 @@ Yang, X., \& Wang, X. (2025). Kolmogorov-Arnold Transformer. \textit{Internation
 \bibitem{aghaei2024rkan}
 Aghaei, A. A. (2024). rKAN: Rational Kolmogorov-Arnold Networks. \textit{arXiv preprint} \href{https://arxiv.org/abs/2406.14495}{arXiv:2406.14495}.
 
+\bibitem{zeng2015}
+Zeng, C., \& Chen, Y. (2015). Global Pad\'e approximations of the generalized Mittag-Leffler function and its inverse. \textit{Fractional Calculus and Applied Analysis}, 18(6), 1492--1506. \href{https://arxiv.org/abs/1310.5592}{arXiv:1310.5592}
+
+\bibitem{schumer2003}
+Schumer, R., Benson, D. A., Meerschaert, M. M., \& Baeumer, B. (2003). Fractal mobile/immobile solute transport. \textit{Water Resources Research}, 39(10), 1296. \href{https://doi.org/10.1029/2003WR002141}{https://doi.org/10.1029/2003WR002141}
+
 \bibitem{aghaei2024fkan}
 Aghaei, A. A. (2024). fKAN: Fractional Kolmogorov-Arnold Networks with trainable Jacobi basis functions. \textit{arXiv preprint} \href{https://arxiv.org/abs/2406.07456}{arXiv:2406.07456}.
 
@@ -344,19 +399,19 @@ Aghaei, A. A. (2024). fKAN: Fractional Kolmogorov-Arnold Networks with trainable
 Abueidda, D. W., Pantidis, P., \& Mobasher, M. E. (2025). DeepOKAN: Deep Operator Network Based on Kolmogorov Arnold Networks for Mechanics Problems. \textit{Computer Methods in Applied Mechanics and Engineering}, 436, 117699. \href{https://doi.org/10.1016/j.cma.2024.117699}{https://doi.org/10.1016/j.cma.2024.117699}
 
 \bibitem{kolesnikov2021ag}
-Kolesnikov, S., Timoshenko, A., Varduni, V., et al. (2021). Influence of Silver Nanoparticles on the Biological Indicators of Haplic Chernozem. \textit{Nanomaterials} / \textit{PMC8161183}. \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC8161183/}{PMC8161183}
+Kolesnikov, S., Timoshenko, A., Minnikova, T., Tsepina, N., Kazeev, K., Akimenko, Y., Zhadobin, A., Shuvaeva, V., Rajput, V. D., Mandzhieva, S., \& Minkina, T. (2021). Influence of Silver Nanoparticles on the Biological Indicators of Haplic Chernozem. \textit{Plants}, 10(5), 1022. \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC8161183/}{PMC8161183}
 
 \bibitem{mdpienzymes2024}
-Minenko, V., et al. (2024). Enzymatic Diagnostics of Soil Health of the European Part of Russia. \textit{Soil Systems}, 8(3), 76. \href{https://www.mdpi.com/2571-8789/8/3/76}{MDPI:2571-8789/8/3/76}
+Minnikova, T., Kolesnikov, S., Kuzina, A., Trufanov, D., Khrapay, E., \& Trushkov, A. (2024). Enzymatic Diagnostics of Soil Health of the European Part of Russia with Lead Contamination. \textit{Soil Systems}, 8(3), 76. \href{https://www.mdpi.com/2571-8789/8/3/76}{MDPI:2571-8789/8/3/76}
 
 \bibitem{mdpi2024oxidoreductases}
-Wyszkowska, J., et al. (2024). The Potential for Restoring the Activity of Oxidoreductases in Soils Contaminated with Petroleum Products. \textit{Applied Sciences}, 14(9), 3591. \href{https://www.mdpi.com/2076-3417/14/9/3591}{MDPI:2076-3417/14/9/3591}
+Wyszkowska, J., et al. (2024). The Potential for Restoring the Activity of Oxidoreductases and Hydrolases in Soils Contaminated with Petroleum Products. \textit{Applied Sciences}, 14(9), 3591. \href{https://www.mdpi.com/2076-3417/14/9/3591}{MDPI:2076-3417/14/9/3591}
 
 \bibitem{diethelm2002predictor}
 Diethelm, K., Ford, N. J., \& Freed, A. D. (2002). A predictor-corrector approach for the numerical solution of fractional differential equations. \textit{Nonlinear Dynamics}, 29, 3--22. \href{https://doi.org/10.1023/A:1016592219341}{https://doi.org/10.1023/A:1016592219341}
 
-\bibitem{kazeev2016bio}
-Kazeev, K. Sh., Kolesnikov, S. I., \& Valkov, V. F. (2003/2016). \textit{Biological Diagnostics and Indication of Soils: Methodology and Research Methods} [in Russian]. Rostov-on-Don: Southern Federal University Press.
+\bibitem{kazeev2003bio}
+Kazeev, K. Sh., Kolesnikov, S. I., \& Valkov, V. F. (2003). \textit{Biological Diagnostics and Indication of Soils: Methodology and Research Methods} [in Russian]. Rostov-on-Don: Southern Federal University Press.
 
 \end{thebibliography}
 

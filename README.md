@@ -3,7 +3,7 @@
 
 **Author:** Ilya Kakhno ([ORCID: 0009-0005-5503-3269](https://orcid.org/0009-0005-5503-3269), Faculty of Biology, Belarusian State University, Minsk, Republic of Belarus)  
 **E-mail:** [Sunnywww1701@gmail.com](mailto:Sunnywww1701@gmail.com)  
-**Code & Weights:** [GitHub](https://github.com/Lolycut/TerraKAN) (`v1.0.1`, `terrakan_v4_frozen.pt`, Seed `42`)  
+**Code & Weights:** [GitHub](https://github.com/Lolycut/TerraKAN) | **Core PyTorch Library (`pip install abelkan`):** [PyPI](https://pypi.org/project/abelkan/) · [GitHub](https://github.com/Lolycut/abelkan) (`v1.1.0`, `terrakan_v4_frozen.pt`, Seed `42`)  
 **Licenses:** Code & Frozen Weights — [MIT License](https://opensource.org/licenses/MIT) | Preprint & Figures — [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Overview

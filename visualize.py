@@ -151,11 +151,6 @@ def plot_fig1_pade_verification(output_dir: str):
         transform=ax2.transAxes, fontsize=7.8,
         bbox=dict(boxstyle="round,pad=0.38", facecolor=PALETTE["bg_box"], edgecolor="#0B6E4F")
     )
-
-    fig.suptitle(
-        "Fig. 1. Mathematical Verification of the Differentiable MittagLefflerPade34 Kernel and Diethelm Caputo ABM Solver",
-        y=1.04
-    )
     path = os.path.join(output_dir, "fig1_pade_verification.png")
     fig.savefig(path, dpi=300, bbox_inches="tight")
     plt.close(fig)
@@ -711,11 +706,6 @@ def plot_fig5_multkan_symbolic_discovery(output_dir: str, data: dict, summary: d
         transform=ax2.transAxes, va="bottom", ha="left", fontsize=6.9,
         bbox=dict(boxstyle="round,pad=0.32", facecolor="white", edgecolor="#0B6E4F", alpha=0.95)
     )
-
-    fig.suptitle(
-        "Fig. 5. Neuro-Symbolic Interpretability: Shelford Law Discovery, MoE Routing, and Symbolic Equivalence",
-        y=1.04
-    )
     path = os.path.join(output_dir, "fig5_multkan_symbolic_discovery.png")
     fig.savefig(path, dpi=300, bbox_inches="tight")
     plt.close(fig)
@@ -777,7 +767,7 @@ def plot_fig6_ablation_and_noise_robustness(output_dir: str, data: dict, summary
     ax0.set_xticklabels(reg_labels, fontsize=7.6)
     ax0.set_ylim(0.0, 26.0)
     ax0.set_ylabel("IBSP$_\\alpha$ Extrapolation RMSE, % (lower is better; $R^2$ in parens)")
-    ax0.set_title("A. Alien Physics & OOD $\\alpha$ Stress Test\n(Zero-Shot RMSE from 0.0%)", pad=8)
+    ax0.set_title("A. Alien Physics & OOD $\\alpha$ Stress Test\n(Zero-Shot IBSP$_\\alpha$ RMSE, 25% Noise)", pad=8)
     ax0.legend(loc="upper left", frameon=True, facecolor="white", framealpha=0.94, fontsize=6.8)
 
     # Inset alpha_pred vs alpha_true in OOD zones ([0.35..0.45] and [0.91..0.96])
