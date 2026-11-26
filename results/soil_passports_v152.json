@@ -1,0 +1,557 @@
+[
+  {
+    "sample_id": "Alpine Gravel-Sand (Biostim.)",
+    "diagnostic_status": "БИОРАЗЛАГАЕМЫЙ СТРЕСС С ГОРМЕТИЧЕСКОЙ СТИМУЛЯЦИЕЙ",
+    "dominant_archetype": "Arch_3 (Sod-Carbonate)",
+    "archetype_mixture_pct": {
+      "Arch_1": 20.5,
+      "Arch_2": 0.5,
+      "Arch_3": 73.7,
+      "Arch_4": 5.3,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 8.59,
+      "NO3_index": 0.18,
+      "moisture_index": 0.549,
+      "carrying_capacity_Km": 2.182,
+      "fractional_memory_alpha": 0.841,
+      "buffering_index": 0.803,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Карбонатный суглинок / чернозёмовидная (высокая биогенность)",
+      "micropore_memory_class": "Быстрый дренаж / слабая память (близко к марковской кинетике)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.447,
+      "persistence_fraction_pi": 0.057,
+      "degradation_median_pct": 81.6,
+      "degradation_q80_interval_pct": [
+        65.9,
+        96.8
+      ],
+      "IBSP_start_pct": 94.4,
+      "IBSP_end_pct": 97.2,
+      "anomaly_score_d_min": 0.543,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Активный микробный отклик: поддерживать влажность и аэрацию, контролировать вторичный спад ферментов."
+  },
+  {
+    "sample_id": "Saline-Sodic Sandy-Loam (SB, >60y Oil)",
+    "diagnostic_status": "СТОЙКОЕ НЕРАЗЛАГАЕМОЕ ЗАГРЯЗНЕНИЕ (металлы / соли / PFAS)",
+    "dominant_archetype": "Arch_3 (Sod-Carbonate)",
+    "archetype_mixture_pct": {
+      "Arch_1": 31.6,
+      "Arch_2": 1.3,
+      "Arch_3": 34.5,
+      "Arch_4": 32.5,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 8.81,
+      "NO3_index": 0.15,
+      "moisture_index": 0.497,
+      "carrying_capacity_Km": 2.132,
+      "fractional_memory_alpha": 0.74,
+      "buffering_index": 0.773,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Карбонатный суглинок / чернозёмовидная (высокая биогенность)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.75,
+      "persistence_fraction_pi": 0.629,
+      "degradation_median_pct": 20.0,
+      "degradation_q80_interval_pct": [
+        8.1,
+        30.7
+      ],
+      "IBSP_start_pct": 77.1,
+      "IBSP_end_pct": 77.0,
+      "anomaly_score_d_min": 0.604,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Биоразложение неэффективно: рекомендована химическая иммобилизация (известь, биочар, сорбенты) или фитостабилизация."
+  },
+  {
+    "sample_id": "Chernozem + Cu2+ (660 mg/kg)",
+    "diagnostic_status": "ЧИСТАЯ ПОЧВА (фон / норма)",
+    "dominant_archetype": "Arch_1 (Sod-Podzolic Loam)",
+    "archetype_mixture_pct": {
+      "Arch_1": 53.7,
+      "Arch_2": 1.8,
+      "Arch_3": 40.2,
+      "Arch_4": 4.3,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 7.59,
+      "NO3_index": 0.177,
+      "moisture_index": 0.369,
+      "carrying_capacity_Km": 2.126,
+      "fractional_memory_alpha": 0.824,
+      "buffering_index": 0.969,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Суглинистая / дерново-подзолистая (умеренная сорбция)",
+      "micropore_memory_class": "Быстрый дренаж / слабая память (близко к марковской кинетике)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.77,
+      "persistence_fraction_pi": 0.997,
+      "degradation_median_pct": 0.0,
+      "degradation_q80_interval_pct": [
+        0.0,
+        0.0
+      ],
+      "IBSP_start_pct": 76.2,
+      "IBSP_end_pct": 73.1,
+      "anomaly_score_d_min": 0.387,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Ремедиация не требуется; плановый мониторинг."
+  },
+  {
+    "sample_id": "Subtrop. Soil + Chlorpyrifos + ERM C-1",
+    "diagnostic_status": "БИОРАЗЛАГАЕМЫЙ СТРЕСС С ГОРМЕТИЧЕСКОЙ СТИМУЛЯЦИЕЙ",
+    "dominant_archetype": "Arch_3 (Sod-Carbonate)",
+    "archetype_mixture_pct": {
+      "Arch_1": 44.2,
+      "Arch_2": 1.1,
+      "Arch_3": 46.1,
+      "Arch_4": 8.6,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 7.99,
+      "NO3_index": 0.157,
+      "moisture_index": 0.368,
+      "carrying_capacity_Km": 2.195,
+      "fractional_memory_alpha": 0.811,
+      "buffering_index": 0.925,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Карбонатный суглинок / чернозёмовидная (высокая биогенность)",
+      "micropore_memory_class": "Быстрый дренаж / слабая память (близко к марковской кинетике)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.771,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 74.1,
+      "degradation_q80_interval_pct": [
+        70.6,
+        77.9
+      ],
+      "IBSP_start_pct": 90.2,
+      "IBSP_end_pct": 93.2,
+      "anomaly_score_d_min": 0.513,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Активный микробный отклик: поддерживать влажность и аэрацию, контролировать вторичный спад ферментов."
+  },
+  {
+    "sample_id": "Clean Wetland Control (CWS, blind)",
+    "diagnostic_status": "ЧИСТАЯ ПОЧВА (фон / норма)",
+    "dominant_archetype": "Arch_1 (Sod-Podzolic Loam)",
+    "archetype_mixture_pct": {
+      "Arch_1": 53.1,
+      "Arch_2": 5.9,
+      "Arch_3": 15.5,
+      "Arch_4": 25.4,
+      "Arch_5": 0.1
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 8.02,
+      "NO3_index": 0.123,
+      "moisture_index": 0.425,
+      "carrying_capacity_Km": 2.109,
+      "fractional_memory_alpha": 0.712,
+      "buffering_index": 0.91,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Суглинистая / дерново-подзолистая (умеренная сорбция)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.04,
+      "persistence_fraction_pi": 0.002,
+      "degradation_median_pct": 0.0,
+      "degradation_q80_interval_pct": [
+        0.0,
+        0.0
+      ],
+      "IBSP_start_pct": 90.0,
+      "IBSP_end_pct": 96.7,
+      "anomaly_score_d_min": 0.189,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Ремедиация не требуется; плановый мониторинг."
+  },
+  {
+    "sample_id": "NEW: Pyrene + Glucose Exudate (21d)",
+    "diagnostic_status": "БИОРАЗЛАГАЕМЫЙ СТРЕСС С ГОРМЕТИЧЕСКОЙ СТИМУЛЯЦИЕЙ",
+    "dominant_archetype": "Arch_1 (Sod-Podzolic Loam)",
+    "archetype_mixture_pct": {
+      "Arch_1": 60.8,
+      "Arch_2": 5.3,
+      "Arch_3": 7.8,
+      "Arch_4": 25.7,
+      "Arch_5": 0.5
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 7.3,
+      "NO3_index": 0.084,
+      "moisture_index": 0.266,
+      "carrying_capacity_Km": 2.104,
+      "fractional_memory_alpha": 0.743,
+      "buffering_index": 0.973,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Суглинистая / дерново-подзолистая (умеренная сорбция)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 2.041,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 62.8,
+      "degradation_q80_interval_pct": [
+        60.6,
+        66.6
+      ],
+      "IBSP_start_pct": 56.5,
+      "IBSP_end_pct": 89.7,
+      "anomaly_score_d_min": 0.817,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Активный микробный отклик: поддерживать влажность и аэрацию, контролировать вторичный спад ферментов."
+  },
+  {
+    "sample_id": "NEW: Pyrene Control No Exudate (21d)",
+    "diagnostic_status": "УМЕРЕННОЕ / ХРОНИЧЕСКОЕ ЗАГРЯЗНЕНИЕ",
+    "dominant_archetype": "Arch_1 (Sod-Podzolic Loam)",
+    "archetype_mixture_pct": {
+      "Arch_1": 61.0,
+      "Arch_2": 4.9,
+      "Arch_3": 5.2,
+      "Arch_4": 27.8,
+      "Arch_5": 1.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 7.11,
+      "NO3_index": 0.078,
+      "moisture_index": 0.222,
+      "carrying_capacity_Km": 2.075,
+      "fractional_memory_alpha": 0.743,
+      "buffering_index": 0.982,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Суглинистая / дерново-подзолистая (умеренная сорбция)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 2.371,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 60.3,
+      "degradation_q80_interval_pct": [
+        57.9,
+        63.9
+      ],
+      "IBSP_start_pct": 50.4,
+      "IBSP_end_pct": 82.0,
+      "anomaly_score_d_min": 0.811,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Рекомендована биостимуляция (NPK, ПАВ) или инокуляция профильным консорциумом."
+  },
+  {
+    "sample_id": "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)",
+    "diagnostic_status": "АКТИВНОЕ САМООЧИЩЕНИЕ / БИОСТИМУЛЯЦИЯ",
+    "dominant_archetype": "Arch_3 (Sod-Carbonate)",
+    "archetype_mixture_pct": {
+      "Arch_1": 35.7,
+      "Arch_2": 1.3,
+      "Arch_3": 52.3,
+      "Arch_4": 10.7,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 8.75,
+      "NO3_index": 0.199,
+      "moisture_index": 0.648,
+      "carrying_capacity_Km": 1.956,
+      "fractional_memory_alpha": 0.789,
+      "buffering_index": 0.747,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Карбонатный суглинок / чернозёмовидная (высокая биогенность)",
+      "micropore_memory_class": "Быстрый дренаж / слабая память (близко к марковской кинетике)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 1.039,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 78.5,
+      "degradation_q80_interval_pct": [
+        72.2,
+        85.2
+      ],
+      "IBSP_start_pct": 56.3,
+      "IBSP_end_pct": 56.4,
+      "anomaly_score_d_min": 0.535,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Высокий темп детоксикации: достаточно мониторинга контрольных точек."
+  },
+  {
+    "sample_id": "NEW: Crude Oil + Benin-3 + Rhamnolipid BN3T6 (90d)",
+    "diagnostic_status": "АКТИВНОЕ САМООЧИЩЕНИЕ / БИОСТИМУЛЯЦИЯ",
+    "dominant_archetype": "Arch_3 (Sod-Carbonate)",
+    "archetype_mixture_pct": {
+      "Arch_1": 42.2,
+      "Arch_2": 1.5,
+      "Arch_3": 45.6,
+      "Arch_4": 10.6,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 8.52,
+      "NO3_index": 0.204,
+      "moisture_index": 0.617,
+      "carrying_capacity_Km": 1.92,
+      "fractional_memory_alpha": 0.795,
+      "buffering_index": 0.786,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Карбонатный суглинок / чернозёмовидная (высокая биогенность)",
+      "micropore_memory_class": "Быстрый дренаж / слабая память (близко к марковской кинетике)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.907,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 78.1,
+      "degradation_q80_interval_pct": [
+        71.5,
+        85.9
+      ],
+      "IBSP_start_pct": 57.0,
+      "IBSP_end_pct": 56.7,
+      "anomaly_score_d_min": 0.467,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Высокий темп детоксикации: достаточно мониторинга контрольных точек."
+  },
+  {
+    "sample_id": "NEW: Herbicide Aclonifen + 3-EM Consortium (67d)",
+    "diagnostic_status": "БИОРАЗЛАГАЕМЫЙ СТРЕСС С ГОРМЕТИЧЕСКОЙ СТИМУЛЯЦИЕЙ",
+    "dominant_archetype": "Arch_3 (Sod-Carbonate)",
+    "archetype_mixture_pct": {
+      "Arch_1": 16.9,
+      "Arch_2": 0.8,
+      "Arch_3": 74.0,
+      "Arch_4": 8.3,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 9.57,
+      "NO3_index": 0.194,
+      "moisture_index": 0.876,
+      "carrying_capacity_Km": 1.941,
+      "fractional_memory_alpha": 0.796,
+      "buffering_index": 0.58,
+      "buffering_tier": "Средняя буферность",
+      "inferred_texture_class": "Карбонатный суглинок / чернозёмовидная (высокая биогенность)",
+      "micropore_memory_class": "Быстрый дренаж / слабая память (близко к марковской кинетике)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.938,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 84.9,
+      "degradation_q80_interval_pct": [
+        80.7,
+        90.6
+      ],
+      "IBSP_start_pct": 53.8,
+      "IBSP_end_pct": 57.4,
+      "anomaly_score_d_min": 0.734,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Активный микробный отклик: поддерживать влажность и аэрацию, контролировать вторичный спад ферментов."
+  },
+  {
+    "sample_id": "NEW: Herbicide Aclonifen Unamended Control (67d)",
+    "diagnostic_status": "АКТИВНОЕ САМООЧИЩЕНИЕ / БИОСТИМУЛЯЦИЯ",
+    "dominant_archetype": "Arch_3 (Sod-Carbonate)",
+    "archetype_mixture_pct": {
+      "Arch_1": 27.8,
+      "Arch_2": 1.2,
+      "Arch_3": 56.7,
+      "Arch_4": 14.3,
+      "Arch_5": 0.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 9.19,
+      "NO3_index": 0.192,
+      "moisture_index": 0.73,
+      "carrying_capacity_Km": 1.959,
+      "fractional_memory_alpha": 0.77,
+      "buffering_index": 0.658,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Карбонатный суглинок / чернозёмовидная (высокая биогенность)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.89,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 77.5,
+      "degradation_q80_interval_pct": [
+        71.5,
+        84.4
+      ],
+      "IBSP_start_pct": 56.7,
+      "IBSP_end_pct": 57.5,
+      "anomaly_score_d_min": 0.558,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Высокий темп детоксикации: достаточно мониторинга контрольных точек."
+  },
+  {
+    "sample_id": "NEW: Heavy Metal Cr(VI) 40 mg/kg (Persistent)",
+    "diagnostic_status": "ЧИСТАЯ ПОЧВА (фон / норма)",
+    "dominant_archetype": "Arch_1 (Sod-Podzolic Loam)",
+    "archetype_mixture_pct": {
+      "Arch_1": 78.9,
+      "Arch_2": 4.2,
+      "Arch_3": 5.4,
+      "Arch_4": 10.5,
+      "Arch_5": 1.0
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 6.87,
+      "NO3_index": 0.139,
+      "moisture_index": 0.244,
+      "carrying_capacity_Km": 1.951,
+      "fractional_memory_alpha": 0.778,
+      "buffering_index": 0.994,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Суглинистая / дерново-подзолистая (умеренная сорбция)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.316,
+      "persistence_fraction_pi": 0.989,
+      "degradation_median_pct": 0.0,
+      "degradation_q80_interval_pct": [
+        0.0,
+        0.0
+      ],
+      "IBSP_start_pct": 85.4,
+      "IBSP_end_pct": 82.7,
+      "anomaly_score_d_min": 0.359,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Ремедиация не требуется; плановый мониторинг."
+  },
+  {
+    "sample_id": "NEW: Indian Vertisol + Pb 300 mg/kg (45d)",
+    "diagnostic_status": "ЧИСТАЯ ПОЧВА (фон / норма)",
+    "dominant_archetype": "Arch_4 (Solonchak)",
+    "archetype_mixture_pct": {
+      "Arch_1": 36.5,
+      "Arch_2": 1.0,
+      "Arch_3": 7.0,
+      "Arch_4": 55.4,
+      "Arch_5": 0.2
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 8.22,
+      "NO3_index": 0.162,
+      "moisture_index": 0.373,
+      "carrying_capacity_Km": 1.872,
+      "fractional_memory_alpha": 0.746,
+      "buffering_index": 0.835,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Засолённый солончак / щёлочной суглинок (осмотический стресс)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.576,
+      "persistence_fraction_pi": 0.803,
+      "degradation_median_pct": 0.0,
+      "degradation_q80_interval_pct": [
+        0.0,
+        0.0
+      ],
+      "IBSP_start_pct": 65.1,
+      "IBSP_end_pct": 66.9,
+      "anomaly_score_d_min": 0.368,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Ремедиация не требуется; плановый мониторинг."
+  },
+  {
+    "sample_id": "NEW: Shengli Oilfield + Biochar-Immobilized Bact. BIM (60d)",
+    "diagnostic_status": "БИОРАЗЛАГАЕМЫЙ СТРЕСС С ГОРМЕТИЧЕСКОЙ СТИМУЛЯЦИЕЙ",
+    "dominant_archetype": "Arch_1 (Sod-Podzolic Loam)",
+    "archetype_mixture_pct": {
+      "Arch_1": 50.0,
+      "Arch_2": 3.0,
+      "Arch_3": 2.7,
+      "Arch_4": 43.8,
+      "Arch_5": 0.5
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 7.29,
+      "NO3_index": 0.076,
+      "moisture_index": 0.161,
+      "carrying_capacity_Km": 2.103,
+      "fractional_memory_alpha": 0.718,
+      "buffering_index": 0.991,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Суглинистая / дерново-подзолистая (умеренная сорбция)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.899,
+      "persistence_fraction_pi": 0.0,
+      "degradation_median_pct": 72.5,
+      "degradation_q80_interval_pct": [
+        68.0,
+        78.4
+      ],
+      "IBSP_start_pct": 88.3,
+      "IBSP_end_pct": 92.6,
+      "anomaly_score_d_min": 0.654,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Активный микробный отклик: поддерживать влажность и аэрацию, контролировать вторичный спад ферментов."
+  },
+  {
+    "sample_id": "NEW: Shengli Oilfield Untreated Oil Control CK (60d)",
+    "diagnostic_status": "ЧИСТАЯ ПОЧВА (фон / норма)",
+    "dominant_archetype": "Arch_4 (Solonchak)",
+    "archetype_mixture_pct": {
+      "Arch_1": 23.5,
+      "Arch_2": 3.4,
+      "Arch_3": 0.1,
+      "Arch_4": 68.4,
+      "Arch_5": 4.5
+    },
+    "physicochemical_profile": {
+      "pH_estimated": 6.88,
+      "NO3_index": 0.058,
+      "moisture_index": 0.167,
+      "carrying_capacity_Km": 1.71,
+      "fractional_memory_alpha": 0.65,
+      "buffering_index": 0.98,
+      "buffering_tier": "Высокая буферность",
+      "inferred_texture_class": "Засолённый солончак / щёлочной суглинок (осмотический стресс)",
+      "micropore_memory_class": "Умеренная субдиффузия (стандартный органо-минеральный профиль)"
+    },
+    "pollution_and_forecast": {
+      "P0_ec50_median": 0.676,
+      "persistence_fraction_pi": 0.087,
+      "degradation_median_pct": 0.0,
+      "degradation_q80_interval_pct": [
+        0.0,
+        0.0
+      ],
+      "IBSP_start_pct": 75.4,
+      "IBSP_end_pct": 76.8,
+      "anomaly_score_d_min": 0.411,
+      "threshold_d_star": 0.58
+    },
+    "remediation_recommendation": "Ремедиация не требуется; плановый мониторинг."
+  }
+]

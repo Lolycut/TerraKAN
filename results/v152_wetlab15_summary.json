@@ -1,0 +1,190 @@
+{
+  "wetlab_15": [
+    {
+      "name": "Alpine Gravel-Sand (Biostim.)",
+      "source": "Margesin & Schinner 2001 (PMC92991)",
+      "group": "Hydrocarbons-Biostim",
+      "actual_deg": 70.4,
+      "ensemble_median_deg": 81.62,
+      "seed_sd_deg": 35.52,
+      "abs_err_pp": 11.22,
+      "pi_persist_median": 0.057,
+      "d_min_median": 0.543
+    },
+    {
+      "name": "Saline-Sodic Sandy-Loam (SB, >60y Oil)",
+      "source": "Garousin et al. 2021 (PMC7947215)",
+      "group": "Hydrocarbons-Chronic",
+      "actual_deg": 38.2,
+      "ensemble_median_deg": 20.03,
+      "seed_sd_deg": 18.22,
+      "abs_err_pp": 18.17,
+      "pi_persist_median": 0.629,
+      "d_min_median": 0.604
+    },
+    {
+      "name": "Chernozem + Cu2+ (660 mg/kg)",
+      "source": "Rafikova et al. 2026 (PMC12945044)",
+      "group": "HeavyMetal-Persistent",
+      "actual_deg": 0.0,
+      "ensemble_median_deg": 0.0,
+      "seed_sd_deg": 0.0,
+      "abs_err_pp": 0.0,
+      "pi_persist_median": 0.997,
+      "d_min_median": 0.387
+    },
+    {
+      "name": "Subtrop. Soil + Chlorpyrifos + ERM C-1",
+      "source": "Kumar et al. 2022 (PMC9360973)",
+      "group": "Pesticide-Consortium",
+      "actual_deg": 98.6,
+      "ensemble_median_deg": 74.06,
+      "seed_sd_deg": 4.58,
+      "abs_err_pp": 24.54,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.513
+    },
+    {
+      "name": "Clean Wetland Control (CWS, blind)",
+      "source": "Chai et al. 2023",
+      "group": "Clean-Control",
+      "actual_deg": 0.0,
+      "ensemble_median_deg": 0.0,
+      "seed_sd_deg": 0.0,
+      "abs_err_pp": 0.0,
+      "pi_persist_median": 0.002,
+      "d_min_median": 0.189
+    },
+    {
+      "name": "NEW: Pyrene + Glucose Exudate (21d)",
+      "source": "Lu et al. 2017 (PMC5541004)",
+      "group": "PAH-Rhizosphere",
+      "actual_deg": 54.3,
+      "ensemble_median_deg": 62.77,
+      "seed_sd_deg": 6.71,
+      "abs_err_pp": 8.47,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.817
+    },
+    {
+      "name": "NEW: Pyrene Control No Exudate (21d)",
+      "source": "Lu et al. 2017 (PMC5541004)",
+      "group": "PAH-Rhizosphere",
+      "actual_deg": 39.9,
+      "ensemble_median_deg": 60.28,
+      "seed_sd_deg": 4.55,
+      "abs_err_pp": 20.38,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.811
+    },
+    {
+      "name": "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)",
+      "source": "Omenna et al. 2025 (PMC12559167)",
+      "group": "Hydrocarbons-Biostim90d",
+      "actual_deg": 82.6,
+      "ensemble_median_deg": 78.49,
+      "seed_sd_deg": 6.33,
+      "abs_err_pp": 4.11,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.535
+    },
+    {
+      "name": "NEW: Crude Oil + Benin-3 + Rhamnolipid BN3T6 (90d)",
+      "source": "Omenna et al. 2025 (PMC12559167)",
+      "group": "Hydrocarbons-Bioaug90d",
+      "actual_deg": 95.5,
+      "ensemble_median_deg": 78.09,
+      "seed_sd_deg": 33.02,
+      "abs_err_pp": 17.41,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.467
+    },
+    {
+      "name": "NEW: Herbicide Aclonifen + 3-EM Consortium (67d)",
+      "source": "Szpyrka et al. 2025, Sci. Rep. 15:24522 (PMC12238601)",
+      "group": "Herbicide-Consortium",
+      "actual_deg": 56.0,
+      "ensemble_median_deg": 84.95,
+      "seed_sd_deg": 4.82,
+      "abs_err_pp": 28.95,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.734
+    },
+    {
+      "name": "NEW: Herbicide Aclonifen Unamended Control (67d)",
+      "source": "Szpyrka et al. 2025, Sci. Rep. 15:24522 (PMC12238601)",
+      "group": "Herbicide-Control",
+      "actual_deg": 26.0,
+      "ensemble_median_deg": 77.5,
+      "seed_sd_deg": 7.29,
+      "abs_err_pp": 51.5,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.558
+    },
+    {
+      "name": "NEW: Heavy Metal Cr(VI) 40 mg/kg (Persistent)",
+      "source": "Wyszkowska et al. 2023 (PMC10303346)",
+      "group": "HeavyMetal-Persistent",
+      "actual_deg": 0.0,
+      "ensemble_median_deg": 0.0,
+      "seed_sd_deg": 0.0,
+      "abs_err_pp": 0.0,
+      "pi_persist_median": 0.989,
+      "d_min_median": 0.359
+    },
+    {
+      "name": "NEW: Indian Vertisol + Pb 300 mg/kg (45d)",
+      "source": "Dotaniya et al. 2023, PLOS ONE (PMC10231758)",
+      "group": "HeavyMetal-Persistent",
+      "actual_deg": 6.6,
+      "ensemble_median_deg": 0.0,
+      "seed_sd_deg": 0.0,
+      "abs_err_pp": 6.6,
+      "pi_persist_median": 0.803,
+      "d_min_median": 0.368
+    },
+    {
+      "name": "NEW: Shengli Oilfield + Biochar-Immobilized Bact. BIM (60d)",
+      "source": "Zhang et al. 2019 (PMC9074702)",
+      "group": "Hydrocarbons-Biochar",
+      "actual_deg": 58.1,
+      "ensemble_median_deg": 72.47,
+      "seed_sd_deg": 3.98,
+      "abs_err_pp": 14.37,
+      "pi_persist_median": 0.0,
+      "d_min_median": 0.654
+    },
+    {
+      "name": "NEW: Shengli Oilfield Untreated Oil Control CK (60d)",
+      "source": "Zhang et al. 2019 (PMC9074702)",
+      "group": "Hydrocarbons-Untreated",
+      "actual_deg": 8.7,
+      "ensemble_median_deg": 0.0,
+      "seed_sd_deg": 12.5,
+      "abs_err_pp": 8.7,
+      "pi_persist_median": 0.087,
+      "d_min_median": 0.411
+    }
+  ],
+  "dry_run_36pots": {
+    "G0_Control": {
+      "n": 6,
+      "min_P0": 0.0331,
+      "max_P0": 0.106,
+      "mean_P0": 0.0648
+    },
+    "G1_PoorClean": {
+      "n": 8,
+      "min_P0": 0.3686,
+      "max_P0": 0.6119,
+      "mean_P0": 0.5117
+    },
+    "G2G3_Contaminated": {
+      "n": 22,
+      "min_P0": 1.2491,
+      "max_P0": 3.2408,
+      "mean_P0": 2.192
+    },
+    "clean_vs_contam_separated": true
+  }
+}

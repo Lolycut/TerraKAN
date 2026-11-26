@@ -1,0 +1,59 @@
+{
+  "test_1_routh_hurwitz": {
+    "passed": true,
+    "n_grid": 501,
+    "alpha_range": [
+      0.4,
+      0.9
+    ],
+    "min_q": [
+      0.9777362833214739,
+      0.43418406381581776,
+      0.10954807247927134,
+      0.01462045288677223
+    ],
+    "min_delta2": 0.03326908002625038,
+    "min_delta3": 0.020527606470467048,
+    "max_real_root": -1.3230111352763938
+  },
+  "test_2_abm_v150": {
+    "passed": true,
+    "recalcitrant_P_inf_max_drift": 0.0,
+    "fast_consortium_30d_deg_pct": 90.88,
+    "hormesis_peak_E": 1.428
+  },
+  "test_3_simulators": {
+    "passed": true,
+    "smoke_n_scenarios": 180,
+    "regimes_present": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ood_suites": [
+      "two_compartment",
+      "logistic_lag_consortium",
+      "biphasic_hormesis"
+    ]
+  },
+  "test_4_wetlab_loader": {
+    "passed": true,
+    "n_scenarios": 9,
+    "new_scenarios": [
+      "NEW: Pyrene Aged Soil + Glucose Exudate (21d)",
+      "NEW: Pyrene Aged Soil Control (No Exudate, 21d)",
+      "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)",
+      "NEW: Crude Oil + Benin-3 Isolate + Rhamnolipid BN3T6 (90d)"
+    ]
+  },
+  "torch_tests": {
+    "torch_available": true,
+    "n_params": 102307,
+    "causality_max_diff": 0.0,
+    "h3_strict_monotonic": true,
+    "gamma_h_bounded": true
+  }
+}

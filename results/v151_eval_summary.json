@@ -1,0 +1,632 @@
+[
+  {
+    "seed": 42,
+    "train_sec": 126.3,
+    "youden": {
+      "d_star": 0.523097950984081,
+      "val_J": 0.7636363636363637,
+      "val_tpr_pct": 90.0,
+      "val_fpr_pct": 13.636363636363635
+    },
+    "arch5_clean_fpr_pct": 4.55,
+    "r2_P_extrap": 0.9197,
+    "rmse_P_extrap": 0.175,
+    "r2_IBSP_extrap": 0.8556,
+    "rmse_IBSP_extrap": 7.92,
+    "cov80_P_pct": 75.7,
+    "cov80_IBSP_pct": 74.2,
+    "gamma_h": 1.965,
+    "slim_curve": {
+      "N=1": {
+        "r2_IBSP_extrap": 0.7817,
+        "mean_q80_width_P": 0.9499
+      },
+      "N=3": {
+        "r2_IBSP_extrap": 0.7538,
+        "mean_q80_width_P": 0.5544
+      },
+      "N=7": {
+        "r2_IBSP_extrap": 0.8518,
+        "mean_q80_width_P": 0.3133
+      }
+    },
+    "ood_benchmarks": {
+      "two_compartment": {
+        "r2_P": 0.6606,
+        "rmse_P": 0.3956,
+        "r2_IBSP": 0.1319,
+        "rmse_IBSP": 13.61
+      },
+      "logistic_lag_consortium": {
+        "r2_P": 0.3288,
+        "rmse_P": 0.351,
+        "r2_IBSP": -0.1933,
+        "rmse_IBSP": 7.54
+      },
+      "biphasic_hormesis": {
+        "r2_P": 0.1386,
+        "rmse_P": 0.1852,
+        "r2_IBSP": -2.3689,
+        "rmse_IBSP": 3.08
+      }
+    },
+    "wetlab": {
+      "Alpine Gravel-Sand (Biostim.)": {
+        "pred_deg": 84.03,
+        "actual_deg": 70.4,
+        "P0": 0.493,
+        "pi_persist": 0.094,
+        "d_min": 0.546,
+        "anom": true
+      },
+      "Saline-Sodic Sandy-Loam (SB, >60y Oil)": {
+        "pred_deg": 59.92,
+        "actual_deg": 38.2,
+        "P0": 0.675,
+        "pi_persist": 0.031,
+        "d_min": 0.575,
+        "anom": true
+      },
+      "Chernozem + Cu2+ (660 mg/kg)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.52,
+        "pi_persist": 0.997,
+        "d_min": 0.328,
+        "anom": false
+      },
+      "Subtrop. Soil + Chlorpyrifos + ERM C-1": {
+        "pred_deg": 66.4,
+        "actual_deg": 98.6,
+        "P0": 0.594,
+        "pi_persist": 0.0,
+        "d_min": 0.497,
+        "anom": false
+      },
+      "Clean Wetland Control (CWS, blind)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.007,
+        "pi_persist": 0.003,
+        "d_min": 0.142,
+        "anom": false
+      },
+      "NEW: Pyrene Aged Soil + Glucose Exudate (21d)": {
+        "pred_deg": 63.05,
+        "actual_deg": 54.3,
+        "P0": 1.792,
+        "pi_persist": 0.0,
+        "d_min": 0.818,
+        "anom": true
+      },
+      "NEW: Pyrene Aged Soil Control (No Exudate, 21d)": {
+        "pred_deg": 60.88,
+        "actual_deg": 39.9,
+        "P0": 2.121,
+        "pi_persist": 0.0,
+        "d_min": 0.811,
+        "anom": true
+      },
+      "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)": {
+        "pred_deg": 68.15,
+        "actual_deg": 82.6,
+        "P0": 0.697,
+        "pi_persist": 0.0,
+        "d_min": 0.486,
+        "anom": false
+      },
+      "NEW: Crude Oil + Benin-3 Isolate + Rhamnolipid BN3T6 (90d)": {
+        "pred_deg": 68.12,
+        "actual_deg": 95.5,
+        "P0": 0.6,
+        "pi_persist": 0.0,
+        "d_min": 0.417,
+        "anom": false
+      }
+    }
+  },
+  {
+    "seed": 101,
+    "train_sec": 140.5,
+    "youden": {
+      "d_star": 0.6287769877342724,
+      "val_J": 0.8293706293706294,
+      "val_tpr_pct": 83.84615384615385,
+      "val_fpr_pct": 0.9090909090909091
+    },
+    "arch5_clean_fpr_pct": 0.0,
+    "r2_P_extrap": 0.9066,
+    "rmse_P_extrap": 0.1888,
+    "r2_IBSP_extrap": 0.8336,
+    "rmse_IBSP_extrap": 8.5,
+    "cov80_P_pct": 75.7,
+    "cov80_IBSP_pct": 74.6,
+    "gamma_h": 1.935,
+    "slim_curve": {
+      "N=1": {
+        "r2_IBSP_extrap": 0.5897,
+        "mean_q80_width_P": 1.0184
+      },
+      "N=3": {
+        "r2_IBSP_extrap": 0.683,
+        "mean_q80_width_P": 0.6254
+      },
+      "N=7": {
+        "r2_IBSP_extrap": 0.8269,
+        "mean_q80_width_P": 0.34
+      }
+    },
+    "ood_benchmarks": {
+      "two_compartment": {
+        "r2_P": 0.6885,
+        "rmse_P": 0.379,
+        "r2_IBSP": 0.1862,
+        "rmse_IBSP": 13.18
+      },
+      "logistic_lag_consortium": {
+        "r2_P": 0.3477,
+        "rmse_P": 0.3461,
+        "r2_IBSP": 0.0846,
+        "rmse_IBSP": 6.6
+      },
+      "biphasic_hormesis": {
+        "r2_P": 0.2191,
+        "rmse_P": 0.1763,
+        "r2_IBSP": -2.1278,
+        "rmse_IBSP": 2.96
+      }
+    },
+    "wetlab": {
+      "Alpine Gravel-Sand (Biostim.)": {
+        "pred_deg": 82.12,
+        "actual_deg": 70.4,
+        "P0": 0.375,
+        "pi_persist": 0.044,
+        "d_min": 0.51,
+        "anom": false
+      },
+      "Saline-Sodic Sandy-Loam (SB, >60y Oil)": {
+        "pred_deg": 13.07,
+        "actual_deg": 38.2,
+        "P0": 1.117,
+        "pi_persist": 0.822,
+        "d_min": 0.597,
+        "anom": false
+      },
+      "Chernozem + Cu2+ (660 mg/kg)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.586,
+        "pi_persist": 0.995,
+        "d_min": 0.374,
+        "anom": false
+      },
+      "Subtrop. Soil + Chlorpyrifos + ERM C-1": {
+        "pred_deg": 74.25,
+        "actual_deg": 98.6,
+        "P0": 0.902,
+        "pi_persist": 0.0,
+        "d_min": 0.503,
+        "anom": false
+      },
+      "Clean Wetland Control (CWS, blind)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.005,
+        "pi_persist": 0.004,
+        "d_min": 0.18,
+        "anom": false
+      },
+      "NEW: Pyrene Aged Soil + Glucose Exudate (21d)": {
+        "pred_deg": 57.98,
+        "actual_deg": 54.3,
+        "P0": 2.084,
+        "pi_persist": 0.0,
+        "d_min": 0.796,
+        "anom": true
+      },
+      "NEW: Pyrene Aged Soil Control (No Exudate, 21d)": {
+        "pred_deg": 56.25,
+        "actual_deg": 39.9,
+        "P0": 2.537,
+        "pi_persist": 0.0,
+        "d_min": 0.792,
+        "anom": true
+      },
+      "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)": {
+        "pred_deg": 85.53,
+        "actual_deg": 82.6,
+        "P0": 1.911,
+        "pi_persist": 0.002,
+        "d_min": 0.535,
+        "anom": false
+      },
+      "NEW: Crude Oil + Benin-3 Isolate + Rhamnolipid BN3T6 (90d)": {
+        "pred_deg": 86.33,
+        "actual_deg": 95.5,
+        "P0": 1.717,
+        "pi_persist": 0.002,
+        "d_min": 0.467,
+        "anom": false
+      }
+    }
+  },
+  {
+    "seed": 777,
+    "train_sec": 139.3,
+    "youden": {
+      "d_star": 0.6189122488943175,
+      "val_J": 0.787878787878788,
+      "val_tpr_pct": 83.33333333333334,
+      "val_fpr_pct": 4.545454545454546
+    },
+    "arch5_clean_fpr_pct": 0.0,
+    "r2_P_extrap": 0.9307,
+    "rmse_P_extrap": 0.1626,
+    "r2_IBSP_extrap": 0.9475,
+    "rmse_IBSP_extrap": 4.77,
+    "cov80_P_pct": 76.3,
+    "cov80_IBSP_pct": 78.0,
+    "gamma_h": 1.888,
+    "slim_curve": {
+      "N=1": {
+        "r2_IBSP_extrap": 0.8727,
+        "mean_q80_width_P": 0.9618
+      },
+      "N=3": {
+        "r2_IBSP_extrap": 0.8879,
+        "mean_q80_width_P": 0.5601
+      },
+      "N=7": {
+        "r2_IBSP_extrap": 0.9454,
+        "mean_q80_width_P": 0.3171
+      }
+    },
+    "ood_benchmarks": {
+      "two_compartment": {
+        "r2_P": 0.7626,
+        "rmse_P": 0.3309,
+        "r2_IBSP": 0.8208,
+        "rmse_IBSP": 6.18
+      },
+      "logistic_lag_consortium": {
+        "r2_P": 0.3978,
+        "rmse_P": 0.3325,
+        "r2_IBSP": 0.5284,
+        "rmse_IBSP": 4.74
+      },
+      "biphasic_hormesis": {
+        "r2_P": 0.3432,
+        "rmse_P": 0.1617,
+        "r2_IBSP": -2.2886,
+        "rmse_IBSP": 3.04
+      }
+    },
+    "wetlab": {
+      "Alpine Gravel-Sand (Biostim.)": {
+        "pred_deg": 0.36,
+        "actual_deg": 70.4,
+        "P0": 0.466,
+        "pi_persist": 0.995,
+        "d_min": 0.553,
+        "anom": false
+      },
+      "Saline-Sodic Sandy-Loam (SB, >60y Oil)": {
+        "pred_deg": 16.24,
+        "actual_deg": 38.2,
+        "P0": 0.749,
+        "pi_persist": 0.722,
+        "d_min": 0.614,
+        "anom": false
+      },
+      "Chernozem + Cu2+ (660 mg/kg)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.593,
+        "pi_persist": 0.998,
+        "d_min": 0.391,
+        "anom": false
+      },
+      "Subtrop. Soil + Chlorpyrifos + ERM C-1": {
+        "pred_deg": 78.38,
+        "actual_deg": 98.6,
+        "P0": 0.708,
+        "pi_persist": 0.0,
+        "d_min": 0.519,
+        "anom": false
+      },
+      "Clean Wetland Control (CWS, blind)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.007,
+        "pi_persist": 0.002,
+        "d_min": 0.19,
+        "anom": false
+      },
+      "NEW: Pyrene Aged Soil + Glucose Exudate (21d)": {
+        "pred_deg": 64.74,
+        "actual_deg": 54.3,
+        "P0": 2.762,
+        "pi_persist": 0.0,
+        "d_min": 0.817,
+        "anom": true
+      },
+      "NEW: Pyrene Aged Soil Control (No Exudate, 21d)": {
+        "pred_deg": 68.21,
+        "actual_deg": 39.9,
+        "P0": 3.103,
+        "pi_persist": 0.0,
+        "d_min": 0.814,
+        "anom": true
+      },
+      "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)": {
+        "pred_deg": 78.33,
+        "actual_deg": 82.6,
+        "P0": 0.784,
+        "pi_persist": 0.0,
+        "d_min": 0.544,
+        "anom": false
+      },
+      "NEW: Crude Oil + Benin-3 Isolate + Rhamnolipid BN3T6 (90d)": {
+        "pred_deg": 77.94,
+        "actual_deg": 95.5,
+        "P0": 0.685,
+        "pi_persist": 0.001,
+        "d_min": 0.478,
+        "anom": false
+      }
+    }
+  },
+  {
+    "seed": 1337,
+    "train_sec": 141.9,
+    "youden": {
+      "d_star": 0.5933692483133619,
+      "val_J": 0.83006993006993,
+      "val_tpr_pct": 88.46153846153845,
+      "val_fpr_pct": 5.454545454545454
+    },
+    "arch5_clean_fpr_pct": 0.0,
+    "r2_P_extrap": 0.9146,
+    "rmse_P_extrap": 0.1804,
+    "r2_IBSP_extrap": 0.8991,
+    "rmse_IBSP_extrap": 6.62,
+    "cov80_P_pct": 76.0,
+    "cov80_IBSP_pct": 75.6,
+    "gamma_h": 1.93,
+    "slim_curve": {
+      "N=1": {
+        "r2_IBSP_extrap": 0.7412,
+        "mean_q80_width_P": 1.0265
+      },
+      "N=3": {
+        "r2_IBSP_extrap": 0.8053,
+        "mean_q80_width_P": 0.5868
+      },
+      "N=7": {
+        "r2_IBSP_extrap": 0.892,
+        "mean_q80_width_P": 0.3279
+      }
+    },
+    "ood_benchmarks": {
+      "two_compartment": {
+        "r2_P": 0.702,
+        "rmse_P": 0.3707,
+        "r2_IBSP": 0.6599,
+        "rmse_IBSP": 8.52
+      },
+      "logistic_lag_consortium": {
+        "r2_P": 0.3662,
+        "rmse_P": 0.3411,
+        "r2_IBSP": -0.0635,
+        "rmse_IBSP": 7.11
+      },
+      "biphasic_hormesis": {
+        "r2_P": 0.3065,
+        "rmse_P": 0.1661,
+        "r2_IBSP": -1.5189,
+        "rmse_IBSP": 2.66
+      }
+    },
+    "wetlab": {
+      "Alpine Gravel-Sand (Biostim.)": {
+        "pred_deg": 56.04,
+        "actual_deg": 70.4,
+        "P0": 0.13,
+        "pi_persist": 0.344,
+        "d_min": 0.519,
+        "anom": false
+      },
+      "Saline-Sodic Sandy-Loam (SB, >60y Oil)": {
+        "pred_deg": 19.98,
+        "actual_deg": 38.2,
+        "P0": 0.84,
+        "pi_persist": 0.63,
+        "d_min": 0.604,
+        "anom": true
+      },
+      "Chernozem + Cu2+ (660 mg/kg)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.632,
+        "pi_persist": 0.998,
+        "d_min": 0.387,
+        "anom": false
+      },
+      "Subtrop. Soil + Chlorpyrifos + ERM C-1": {
+        "pred_deg": 69.23,
+        "actual_deg": 98.6,
+        "P0": 0.557,
+        "pi_persist": 0.0,
+        "d_min": 0.513,
+        "anom": false
+      },
+      "Clean Wetland Control (CWS, blind)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.003,
+        "pi_persist": 0.001,
+        "d_min": 0.189,
+        "anom": false
+      },
+      "NEW: Pyrene Aged Soil + Glucose Exudate (21d)": {
+        "pred_deg": 46.79,
+        "actual_deg": 54.3,
+        "P0": 0.568,
+        "pi_persist": 0.0,
+        "d_min": 0.82,
+        "anom": true
+      },
+      "NEW: Pyrene Aged Soil Control (No Exudate, 21d)": {
+        "pred_deg": 54.75,
+        "actual_deg": 39.9,
+        "P0": 1.188,
+        "pi_persist": 0.0,
+        "d_min": 0.819,
+        "anom": true
+      },
+      "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)": {
+        "pred_deg": 78.54,
+        "actual_deg": 82.6,
+        "P0": 1.081,
+        "pi_persist": 0.0,
+        "d_min": 0.527,
+        "anom": false
+      },
+      "NEW: Crude Oil + Benin-3 Isolate + Rhamnolipid BN3T6 (90d)": {
+        "pred_deg": 78.71,
+        "actual_deg": 95.5,
+        "P0": 0.927,
+        "pi_persist": 0.0,
+        "d_min": 0.467,
+        "anom": false
+      }
+    }
+  },
+  {
+    "seed": 2026,
+    "train_sec": 143.9,
+    "youden": {
+      "d_star": 0.6305141146028722,
+      "val_J": 0.8086247086247087,
+      "val_tpr_pct": 83.58974358974359,
+      "val_fpr_pct": 2.727272727272727
+    },
+    "arch5_clean_fpr_pct": 0.0,
+    "r2_P_extrap": 0.9085,
+    "rmse_P_extrap": 0.1868,
+    "r2_IBSP_extrap": 0.9471,
+    "rmse_IBSP_extrap": 4.79,
+    "cov80_P_pct": 74.0,
+    "cov80_IBSP_pct": 80.1,
+    "gamma_h": 1.889,
+    "slim_curve": {
+      "N=1": {
+        "r2_IBSP_extrap": 0.8681,
+        "mean_q80_width_P": 0.9758
+      },
+      "N=3": {
+        "r2_IBSP_extrap": 0.8914,
+        "mean_q80_width_P": 0.6113
+      },
+      "N=7": {
+        "r2_IBSP_extrap": 0.9455,
+        "mean_q80_width_P": 0.3192
+      }
+    },
+    "ood_benchmarks": {
+      "two_compartment": {
+        "r2_P": 0.7413,
+        "rmse_P": 0.3454,
+        "r2_IBSP": 0.8119,
+        "rmse_IBSP": 6.33
+      },
+      "logistic_lag_consortium": {
+        "r2_P": 0.3955,
+        "rmse_P": 0.3332,
+        "r2_IBSP": 0.54,
+        "rmse_IBSP": 4.68
+      },
+      "biphasic_hormesis": {
+        "r2_P": 0.2786,
+        "rmse_P": 0.1695,
+        "r2_IBSP": -2.4295,
+        "rmse_IBSP": 3.1
+      }
+    },
+    "wetlab": {
+      "Alpine Gravel-Sand (Biostim.)": {
+        "pred_deg": 97.94,
+        "actual_deg": 70.4,
+        "P0": 0.571,
+        "pi_persist": 0.0,
+        "d_min": 0.543,
+        "anom": false
+      },
+      "Saline-Sodic Sandy-Loam (SB, >60y Oil)": {
+        "pred_deg": 19.53,
+        "actual_deg": 38.2,
+        "P0": 0.638,
+        "pi_persist": 0.588,
+        "d_min": 0.617,
+        "anom": false
+      },
+      "Chernozem + Cu2+ (660 mg/kg)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.539,
+        "pi_persist": 0.997,
+        "d_min": 0.389,
+        "anom": false
+      },
+      "Subtrop. Soil + Chlorpyrifos + ERM C-1": {
+        "pred_deg": 77.04,
+        "actual_deg": 98.6,
+        "P0": 0.754,
+        "pi_persist": 0.0,
+        "d_min": 0.517,
+        "anom": false
+      },
+      "Clean Wetland Control (CWS, blind)": {
+        "pred_deg": 0.0,
+        "actual_deg": 0.0,
+        "P0": 0.004,
+        "pi_persist": 0.006,
+        "d_min": 0.19,
+        "anom": false
+      },
+      "NEW: Pyrene Aged Soil + Glucose Exudate (21d)": {
+        "pred_deg": 64.11,
+        "actual_deg": 54.3,
+        "P0": 2.117,
+        "pi_persist": 0.0,
+        "d_min": 0.8,
+        "anom": true
+      },
+      "NEW: Pyrene Aged Soil Control (No Exudate, 21d)": {
+        "pred_deg": 63.84,
+        "actual_deg": 39.9,
+        "P0": 2.447,
+        "pi_persist": 0.0,
+        "d_min": 0.797,
+        "anom": true
+      },
+      "NEW: Crude Oil + Kenaf + Rhamnolipid T4 (90d)": {
+        "pred_deg": 85.31,
+        "actual_deg": 82.6,
+        "P0": 1.065,
+        "pi_persist": 0.0,
+        "d_min": 0.54,
+        "anom": false
+      },
+      "NEW: Crude Oil + Benin-3 Isolate + Rhamnolipid BN3T6 (90d)": {
+        "pred_deg": 85.79,
+        "actual_deg": 95.5,
+        "P0": 0.934,
+        "pi_persist": 0.0,
+        "d_min": 0.472,
+        "anom": false
+      }
+    }
+  }
+]
